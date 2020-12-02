@@ -6,8 +6,8 @@ const simpleRoll = (numDice, sides = 6) => Array.apply(null, Array(numDice)).map
 
 const sum = (arr) => arr.reduce((a, b) => a + b, 0);
 
-const dm = (num) => {
-    if (num <= 0) return '-3';
+const dmVal = (num) => {
+    if (num < 0) return '-3';
     if (num <= 2) return '-2';
     if (num <= 5) return '-1';
     if (num <= 8) return '0';
@@ -32,7 +32,10 @@ const parseCommand = (msg) => {
         🪐 **$bane** - *rolls bane roll*
         🪐 **$boon x** - *$boon_x (x modifier)*
         🪐 **$bane x** - *$bane_x (x modifier)*
+        🪐 **$dm** - *list characteristics*
+        🪐 **$dm x** - *$dm_x (x characteristic)*
         `);
+        return;
     }
 
     if (msg.content.startsWith('$r ') || msg.content.startsWith('$r2')) {
@@ -56,11 +59,45 @@ const parseCommand = (msg) => {
         } else {
             msg.react('⛔');
         }
+        return;
     }
 
     if (msg.content.startsWith('$r66')) {
         msg.react('🎲');
         msg.reply(`🎲 [${r()}${r()}]`);
+        return;
+    }
+
+    if (msg.content.startsWith('$dm ')) {
+        msg.react('🦮');
+        const dm = parseInt(msg.content.split(' ')[1]) || 0;
+        msg.reply(`🦮 dm for ${dm} is ${dmVal(dm)}`);
+        return;
+    }
+
+    if (msg.content.startsWith('$dm')) {
+        msg.react('🦮');
+        const dm = parseInt(msg.content.split(' ')[1]) || 0;
+        msg.reply(`
+            🦮 dm for characteristics are:
+                *00* - **{${dmVal(0)}}**
+                *01* - **{${dmVal(1)}}**
+                *02* - **{${dmVal(2)}}**
+                *03* - **{${dmVal(3)}}**
+                *04* - **{${dmVal(4)}}**
+                *05* - **{${dmVal(5)}}**
+                *06* - **{${dmVal(6)}}**
+                *07* - **{${dmVal(7)}}**
+                *08* - **{${dmVal(8)}}**
+                *09* - **{${dmVal(9)}}**
+                *10* - **{${dmVal(10)}}**
+                *11* - **{${dmVal(11)}}**
+                *12* - **{${dmVal(12)}}**
+                *13* - **{${dmVal(13)}}**
+                *14* - **{${dmVal(14)}}**
+                *15* - **{${dmVal(15)}}**
+        `);
+        return;
     }
 
     if (msg.content.startsWith('$char')) {
@@ -74,12 +111,12 @@ const parseCommand = (msg) => {
         const roll6 = simpleRoll(2);
 
         msg.reply(`
-            🎲 Roll1 - [${roll1}] = **${sum(roll1)}** DM:${dm(sum(roll1))}
-            🎲 Roll2 - [${roll2}] = **${sum(roll2)}** DM:${dm(sum(roll2))}
-            🎲 Roll3 - [${roll3}] = **${sum(roll3)}** DM:${dm(sum(roll3))}
-            🎲 Roll4 - [${roll4}] = **${sum(roll4)}** DM:${dm(sum(roll4))}
-            🎲 Roll5 - [${roll5}] = **${sum(roll5)}** DM:${dm(sum(roll5))}
-            🎲 Roll6 - [${roll6}] = **${sum(roll6)}** DM:${dm(sum(roll6))}
+            🎲 Roll1 - [${roll1}] = **${sum(roll1)}** DM:${dmVal(sum(roll1))}
+            🎲 Roll2 - [${roll2}] = **${sum(roll2)}** DM:${dmVal(sum(roll2))}
+            🎲 Roll3 - [${roll3}] = **${sum(roll3)}** DM:${dmVal(sum(roll3))}
+            🎲 Roll4 - [${roll4}] = **${sum(roll4)}** DM:${dmVal(sum(roll4))}
+            🎲 Roll5 - [${roll5}] = **${sum(roll5)}** DM:${dmVal(sum(roll5))}
+            🎲 Roll6 - [${roll6}] = **${sum(roll6)}** DM:${dmVal(sum(roll6))}
 
             TOTAL: **${sum([sum(roll1), sum(roll2), sum(roll3), sum(roll4), sum(roll5), sum(roll6)])}**
 
@@ -88,6 +125,7 @@ const parseCommand = (msg) => {
             [9][8][6][6][5][4] 	= (38)
             [10][8][6][6][4][4]   = (38)
         `);
+        return;
     }
 
     if (msg.content.startsWith('$boon') || msg.content.startsWith('$bane')) {
@@ -105,6 +143,7 @@ const parseCommand = (msg) => {
         } else {
             msg.react('⛔');
         }
+        return;
     }
 }
 
