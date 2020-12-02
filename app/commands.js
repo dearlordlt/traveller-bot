@@ -48,8 +48,6 @@ const parseCommand = (msg) => {
 
         dm = parseInt(dm) ? parseInt(dm) : 0;
 
-        console.log(dices, dm, sides);
-
         if (parseInt(dices)) {
             msg.react('🎲');
             const value = simpleRoll(parseInt(dices), sides);
