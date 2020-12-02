@@ -1,8 +1,8 @@
 const BOT_PREFIX = '$';
 
-const r = () => (Math.ceil(Math.random(d = 6) * 6));
+const r = (sides = 6) => (Math.ceil(Math.random() * sides));
 
-const simpleRoll = (numDice) => Array.apply(null, Array(numDice)).map(item => item = r());
+const simpleRoll = (numDice, sides = 6) => Array.apply(null, Array(numDice)).map(item => item = r(sides));
 
 const sum = (arr) => arr.reduce((a, b) => a + b, 0);
 
@@ -21,7 +21,10 @@ const parseCommand = (msg) => {
     if (msg.content.startsWith('$help')) {
         msg.react('🦮');
         msg.reply(`
-        🪐 **$r** - *$r_x_y (x dices, y modifier)*
+        🪐 **$r** - *$r_x_y_z*
+                    **x** dice
+                    **y** *mod (optional, default = 0))*
+                    **z** *sides (optional, default = 6))*
         🪐 **$r2** - *roll 2d*
         🪐 **$r66** - *roll d66*
         🪐 **$char** - *generates characteristics*
@@ -33,20 +36,23 @@ const parseCommand = (msg) => {
     }
 
     if (msg.content.startsWith('$r ') || msg.content.startsWith('$r2')) {
-        let dices, dm;
+        let dices, dm, sides = 6;
         if (msg.content.startsWith('$r2')) {
             dices = 2;
             dm = 0;
         } else {
             dices = msg.content.split(' ')[1];
             dm = msg.content.split(' ')[2] || 0;
+            sides = parseInt(msg.content.split(' ')[3]) || 6;
         }
 
-        console.log(dices, dm);
+        dm = parseInt(dm) ? parseInt(dm) : 0;
 
-        if (parseInt(dices) && (parseInt(dm) || dm === 0)) {
+        console.log(dices, dm, sides);
+
+        if (parseInt(dices)) {
             msg.react('🎲');
-            const value = simpleRoll(parseInt(dices));
+            const value = simpleRoll(parseInt(dices), sides);
             const sumValue = sum(value) + parseInt(dm);
             msg.reply(`🎲 [${value}] = ${sumValue}`);
         } else {
