@@ -74,7 +74,9 @@ const parseCommand = (msg) => {
             msg.react('🎲');
             const value = simpleRoll(parseInt(dices), sides);
             const sumValue = sum(value) + parseInt(dm);
-            const isSuccessStr = sumValue >= diff ? `[${sumValue} >= ${diff}] **Success!**` : `[${sumValue} >= ${diff}] **Failure!**`;
+            const isSuccessStr = sumValue >= diff
+                ? `[${sumValue} >= ${diff}] **Success!**`
+                : `[${sumValue} >= ${diff}] **Failure!**`;
 
             msg.reply(`🎲 [${value}]${!dm ? '' : '+' + dm}= ${sumValue} ${diff ? isSuccessStr : ''}`);
         } else {
