@@ -21,17 +21,18 @@ const parseCommand = (msg) => {
     if (msg.content.startsWith('$help')) {
         msg.react('🦮');
         msg.reply(`
-        🪐 **$r** - *$r_x_y_z*
+        🪐 **$r** - *$r x y z /y*
                     **x** dice
                     **y** *mod (optional, default = 0))*
                     **z** *sides (optional, default = 6))*
+                    **y** *difficulty (optional))*
         🪐 **$r2** - *roll 2d*
         🪐 **$r66** - *roll d66*
         🪐 **$char** - *generates characteristics*
         🪐 **$boon** - *rolls boon roll*
         🪐 **$bane** - *rolls bane roll*
-        🪐 **$boon x** - *$boon_x (x modifier)*
-        🪐 **$bane x** - *$bane_x (x modifier)*
+        🪐 **$boon x** - *$boon x (x modifier)*
+        🪐 **$bane x** - *$bane x (x modifier)*
         🪐 **$dm** - *list characteristics*
         🪐 **$dm x** - *$dm_x (x characteristic)*
         `);
@@ -39,14 +40,32 @@ const parseCommand = (msg) => {
     }
 
     if (msg.content.startsWith('$r ') || msg.content.startsWith('$r2')) {
-        let dices, dm, sides = 6;
-        if (msg.content.startsWith('$r2')) {
+        let dices, dm, diff, sides = 6;
+        let content = msg.content;
+
+        if (msg.content.includes('  ')) {
+            msg.react('⛔');
+            msg.reply(`⛔ Warning ⚠️ **Dima** detected, please use normal syntax.`);
+            msg.react('💳');
+            msg.react('⚠️');
+            msg.reply(`💳 Imperial law strictly forbids **Dima**'s syntax`);
+            msg.reply(`💳 You received a fine - **Cr100**`);
+            msg.reply(`💳 Please pay in nearest spaceport`);
+            content = msg.content.replace(/\s\s+/g, ' ');
+        }
+
+        if (content.startsWith('$r2')) {
             dices = 2;
             dm = 0;
         } else {
-            dices = msg.content.split(' ')[1];
-            dm = msg.content.split(' ')[2] || 0;
-            sides = parseInt(msg.content.split(' ')[3]) || 6;
+            dices = content.split(' ')[1];
+            dm = content.split(' ')[2] || 0;
+            sides = parseInt(content.split(' ')[3]) || 6;
+        }
+
+        if (content.includes('/')) {
+            const val = content.match(/[^\/]+$/);
+            diff = parseInt(val[0]);
         }
 
         dm = parseInt(dm) ? parseInt(dm) : 0;
@@ -55,7 +74,9 @@ const parseCommand = (msg) => {
             msg.react('🎲');
             const value = simpleRoll(parseInt(dices), sides);
             const sumValue = sum(value) + parseInt(dm);
-            msg.reply(`🎲 [${value}] = ${sumValue}`);
+            const isSuccessStr = sumValue >= diff ? `[${sumValue} >= ${diff}] **Success!**` : `[${sumValue} >= ${diff}] **Failure!**`;
+
+            msg.reply(`🎲 [${value}]${!dm ? '' : '+' + dm}= ${sumValue} ${diff ? isSuccessStr : ''}`);
         } else {
             msg.react('⛔');
         }
