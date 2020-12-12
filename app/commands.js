@@ -6,6 +6,8 @@ const simpleRoll = (numDice, sides = 6) => Array.apply(null, Array(numDice)).map
 
 const sum = (arr) => arr.reduce((a, b) => a + b, 0);
 
+const rollLn = (l, sides = 6) => Array.apply(null, Array(l)).map(() => r(sides));
+
 const dmVal = (num) => {
     if (num < 0) return '-3';
     if (num <= 2) return '-2';
@@ -35,6 +37,8 @@ const parseCommand = (msg) => {
         🪐 **$bane x** - *$bane x (x modifier)*
         🪐 **$dm** - *list characteristics*
         🪐 **$dm x** - *$dm_x (x characteristic)*
+        🪐 **$jump x** - *$jump_x (x DM), DM-2 for unrefined fuel, DM-4 for 100 diameter limit*
+        🪐 **$ship** - *$ship maintenance*
         `);
         return;
     }
@@ -167,6 +171,61 @@ const parseCommand = (msg) => {
             msg.react('⛔');
         }
         return;
+    }
+
+    if (msg.content.startsWith('$jump')) {
+        const dm = msg.content.split(' ')[1] || 0;
+        const jumpAstrogation = [
+            { val: 2, label: `Bad Jump: 16D Hours. Traveller Companion Book p.142`, hours: sum(rollLn(16)), fuel: 20, diameters: (110 - sum(rollLn(3))) },
+            { val: 3, label: `Bad Jump: 10D Hours. Traveller Companion Book p.142`, hours: sum(rollLn(10)), fuel: 17, diameters: (110 - sum(rollLn(2))) },
+            { val: 4, label: `Bad Jump: 8D Hours. Traveller Companion Book p.142`, hours: sum(rollLn(8)), fuel: 14, diameters: (105 - sum(rollLn(1))) },
+            { val: 5, label: `Bad Jump: 6D Hours. Traveller Companion Book p.142`, hours: sum(rollLn(6)), fuel: 12, diameters: (100 + sum(rollLn(2)) * 10) },
+            { val: 6, label: `5D Hours`, hours: sum(rollLn(5)), fuel: 10, diameters: (100 + sum(rollLn(2)) * 5) },
+            { val: 7, label: `4D Hours`, hours: sum(rollLn(4)), fuel: 10, diameters: (100 + sum(rollLn(4))) },
+            { val: 8, label: `3D Hours`, hours: sum(rollLn(3)), fuel: 10, diameters: (100 + sum(rollLn(3))) },
+            { val: 9, label: `2D Hours`, hours: sum(rollLn(2)), fuel: 10, diameters: (100 + sum(rollLn(2))) },
+            { val: 10, label: `1D Hours`, hours: sum(rollLn(1)), fuel: 9, diameters: (100 + sum(rollLn(1))) },
+            { val: 11, label: `1D3 Hours`, hours: sum(rollLn(1, 3)), fuel: 7, diameters: (100 + sum(rollLn(1, 3))) },
+            { val: 12, label: `160 Hours exactly`, hours: 0, fuel: 5, diameters: 100 },
+        ];
+
+        if (parseInt(dm) || dm === 0) {
+            msg.react('🎲');
+            const roll = [r(), r()];
+
+            const sumJump = parseInt(dm) + sum(roll);
+            let astroValue = sumJump;
+            astroValue = astroValue > 12 ? 12 : astroValue < 2 ? 2 : astroValue;
+
+            const result = jumpAstrogation.find(val => val.val === astroValue);
+
+            msg.reply(`🎲 [${roll}]+${dm}=**${sumJump}**`);
+            msg.reply(`🚀 Jump result: ${result.label}`);
+            msg.reply(`🚀 Jump took: ${160 + result.hours} h`);
+            msg.reply(`🚀 Distance eq: ${result.diameters} diameters`);
+            msg.reply(`🚀 Used ${result.fuel}% of total fuel per parsec`);
+        } else {
+            msg.react('⛔');
+        }
+        return;
+    }
+
+    if (msg.content.startsWith('$ship')) {
+        msg.reply(`🚀 **Ship maintenance Cost**:
+        **Life Support** - 
+            Cr1000 per stateroom, 
+            Cr3000 for double occupancy, 
+            Cr100 per low berth,
+            Cr1000 per person
+        **Fuel** Cr500 per refined ton, Cr100 per unrefined ton
+        **Repairs and Maintenance** 0.1 % of purchase price, divided by 12
+        **Salary:** Pilot Cr6000
+        **Salary:** Astrogator Cr5000
+        **Salary:** Engineer Cr4000
+        **Salary:** Steward Cr2000
+        **Salary:** Medic Cr3000
+        **Salary:** Gunner Cr1000
+        **Salary:** Marine Cr1000`);
     }
 }
 
