@@ -233,7 +233,7 @@ const parseCommand = (msg) => {
             { val: 12, label: `160 Hours exactly`, hours: 0, fuel: 5, diameters: 100 },
         ];
 
-        if (parseInt(dm) || dm === 0) {
+        if (parseInt(dm) || dm == 0) {
             msg.react('🎲');
             const roll = [r(), r()];
 
