@@ -1,5 +1,6 @@
 const charactersNPC = require('./random-characters');
 const randomNames = require('./names');
+const planet = require('./planet');
 
 const r = (sides = 6) => (Math.ceil(Math.random() * sides));
 
@@ -42,6 +43,7 @@ const parseCommand = (msg) => {
         🪐 **$cost** - *cost of living*
         🪐 **$npc x** - *random npc (x optional, number, max 12)*
         🪐 **$names x** - *random names (x optional, number, max 100)*
+        🪐 **$planet x** - *random planet (x optional, planet code: a.e. D3C6XX1)*
         `);
         return;
     }
@@ -268,6 +270,7 @@ const parseCommand = (msg) => {
         **Salary:** Medic Cr3000
         **Salary:** Gunner Cr1000
         **Salary:** Marine Cr1000`);
+        return;
     }
 
     if (msg.content.startsWith('$cost')) {
@@ -284,6 +287,67 @@ const parseCommand = (msg) => {
         **Very Rich** Cr12000💳 *Social Standing 14*
         **Ludicrously Rich** Cr20000+💳 *Social Standing 15*
         `);
+        return;
+    }
+
+    if (msg.content.startsWith('$planet')) {
+        msg.react('🪐');
+
+        if (msg.content.startsWith('$planet ')) {
+            const message = msg.content.split(' ');
+            if (message.length !== 2) {
+                msg.react('⛔');
+                msg.reply(`Expected 1 argument, got ${message.length - 1}`);
+                return;
+            } else {
+                const planetCode = message[1].toUpperCase();
+                const planetCodeArr = planetCode.split('');
+
+                const portV = planet.getPortValue(planetCodeArr[0]);
+                const sizeV = planet.getSizeValue(planetCodeArr[1]);
+                const atmoV = planet.getAtmosphereValue(planetCodeArr[2]);
+                const hydroV = planet.getHydroValue(planetCodeArr[3]);
+                const popV = planet.getPopValue(planetCodeArr[4]);
+                const govV = planet.getGovValue(planetCodeArr[5]);
+                const lawV = planet.getLawValue(planetCodeArr[6]);
+
+                msg.reply(`
+                    **PLANET CODE:** ${planetCode}
+                    **PORT:** (**${portV.value}**) - ${portV.label}
+                    **SIZE:** (**${sizeV.value}**) - ${sizeV.label} - **Gravity**: ${sizeV.gravity}
+                    **ATMOSPHERE:** (**${atmoV.value}**) - ${atmoV.label} - **Pressure**: ${atmoV.pressure} **Protection**: ${atmoV.protection}
+                    **HYDRO:** (**${hydroV.value}**) - ${hydroV.label}
+                    **POP:** (**${popV.value}**) - ${popV.label} (${popV.pop})
+                    **GOVERNMENT:** (**${govV.value}**) - ${govV.label}
+                    **LAW:** (**${lawV.value}**) - **Banned weapons** - ${lawV.label}, **Banned Armour**: ${lawV.bannedArmour}
+                    `
+                );
+                return;
+            }
+        }
+
+        const port = planet.getPort();
+        const size = planet.getSize();
+        const atmo = planet.getAtmosphere();
+        const hydro = planet.getHydro();
+        const pop = planet.getPop();
+        const gov = planet.getGov();
+        const law = planet.getLaw();
+
+        const code = `${port.value}${size.value}${atmo.value}${hydro.value}${pop.value}${gov.value}${law.value}`;
+
+        msg.reply(`
+            **CODE:** **${code}** 🪐
+            **PORT:** (**${port.value}**) - ${port.label}
+            **SIZE:** (**${size.value}**) - ${size.label} - **Gravity**: ${size.gravity}
+            **ATMOSPHERE:** (**${atmo.value}**) - ${atmo.label} - **Pressure**: ${atmo.pressure} **Protection**: ${atmo.protection}
+            **HYDRO:** (**${hydro.value}**) - ${hydro.label}
+            **POP:** (**${pop.value}**) - ${pop.label} (${pop.pop})
+            **GOVERNMENT:** (**${gov.value}**) - ${gov.label}
+            **LAW:** (**${law.value}**) - **Banned weapons** - ${law.label}, **Banned Armour**: ${law.bannedArmour}
+            🪐 https://drive.google.com/file/d/12XVnhm-bBNzBv16Hr1ZVDX0DnGpmkFmw/view?usp=sharing
+        `);
+        return;
     }
 }
 
