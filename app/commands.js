@@ -1,10 +1,9 @@
 const charactersNPC = require('./random-characters');
 const randomNames = require('./names');
 
-const BOT_PREFIX = '$';
-
 const r = (sides = 6) => (Math.ceil(Math.random() * sides));
 
+// eslint-disable-next-line no-unused-vars
 const simpleRoll = (numDice, sides = 6) => Array.apply(null, Array(numDice)).map(item => item = r(sides));
 
 const sum = (arr) => arr.reduce((a, b) => a + b, 0);
@@ -70,7 +69,7 @@ const parseCommand = (msg) => {
         }
 
         if (content.includes('/')) {
-            const val = content.match(/[^\/]+$/);
+            const val = content.match(/[^/]+$/);
             diff = parseInt(val[0]);
         }
 
@@ -131,7 +130,6 @@ const parseCommand = (msg) => {
 
     if (msg.content.startsWith('$dm')) {
         msg.react('🦮');
-        const dm = parseInt(msg.content.split(' ')[1]) || 0;
         msg.reply(`
             🦮 dm for characteristics are:
                 *00* - **{${dmVal(0)}}**
