@@ -1,6 +1,7 @@
 const charactersNPC = require('./random-characters');
 const randomNames = require('./names');
 const planet = require('./planet');
+const util = require('./util');
 
 const r = (sides = 6) => (Math.ceil(Math.random() * sides));
 
@@ -317,7 +318,7 @@ const parseCommand = (msg) => {
                     **SIZE:** (**${sizeV.value}**) - ${sizeV.label} - **Gravity**: ${sizeV.gravity}
                     **ATMOSPHERE:** (**${atmoV.value}**) - ${atmoV.label} - **Pressure**: ${atmoV.pressure} **Protection**: ${atmoV.protection}
                     **HYDRO:** (**${hydroV.value}**) - ${hydroV.label}
-                    **POP:** (**${popV.value}**) - ${popV.label} (${popV.pop})
+                    **POP:** (**${popV.value}**) - ${util.bigNumber(popV.label)} (${popV.pop})
                     **GOVERNMENT:** (**${govV.value}**) - ${govV.label}
                     **LAW:** (**${lawV.value}**) - **Banned weapons** - ${lawV.label}, **Banned Armour**: ${lawV.bannedArmour}
                     `
@@ -342,7 +343,7 @@ const parseCommand = (msg) => {
             **SIZE:** (**${size.value}**) - ${size.label} - **Gravity**: ${size.gravity}
             **ATMOSPHERE:** (**${atmo.value}**) - ${atmo.label} - **Pressure**: ${atmo.pressure} **Protection**: ${atmo.protection}
             **HYDRO:** (**${hydro.value}**) - ${hydro.label}
-            **POP:** (**${pop.value}**) - ${pop.label} (${pop.pop})
+            **POP:** (**${pop.value}**) - ${util.bigNumber(pop.label)} (${pop.pop})
             **GOVERNMENT:** (**${gov.value}**) - ${gov.label}
             **LAW:** (**${law.value}**) - **Banned weapons** - ${law.label}, **Banned Armour**: ${law.bannedArmour}
             🪐 https://drive.google.com/file/d/12XVnhm-bBNzBv16Hr1ZVDX0DnGpmkFmw/view?usp=sharing
