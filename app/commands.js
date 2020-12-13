@@ -346,7 +346,6 @@ const parseCommand = (msg) => {
             **POP:** (**${pop.value}**) - ${util.bigNumber(pop.label)} (${pop.pop})
             **GOVERNMENT:** (**${gov.value}**) - ${gov.label}
             **LAW:** (**${law.value}**) - **Banned weapons** - ${law.label}, **Banned Armour**: ${law.bannedArmour}
-            🪐 https://drive.google.com/file/d/12XVnhm-bBNzBv16Hr1ZVDX0DnGpmkFmw/view?usp=sharing
         `);
         return;
     }
