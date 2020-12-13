@@ -78,11 +78,20 @@ const parseCommand = (msg) => {
             msg.react('🎲');
             const value = simpleRoll(parseInt(dices), sides);
             const sumValue = sum(value) + parseInt(dm);
-            const isSuccessStr = sumValue >= diff
-                ? `[${sumValue} >= ${diff}] **Success!** 🤑`
-                : `[${sumValue} >= ${diff}] **Failure!** ☠️`;
+            let successLevel = '';
 
-            msg.reply(`🎲 [${value}]${!dm ? '' : '+' + dm}= ${sumValue} ${diff ? isSuccessStr : ''}`);
+            if (sumValue - diff <= -6) successLevel = 'Exceptional Failure';
+            else if (sumValue - diff <= -2) successLevel = 'Average Failure';
+            else if (sumValue - diff === -1) successLevel = 'Marginal Failure';
+            else if (sumValue - diff === 0) successLevel = 'Marginal Success';
+            else if (sumValue - diff <= 5) successLevel = 'Average Success';
+            else if (sumValue - diff >= 6) successLevel = 'Exceptional Success';
+
+            const isSuccessStr = sumValue >= diff
+                ? `[${sumValue} >= ${diff}] **${successLevel} (${sumValue - diff})** 🤑`
+                : `[${sumValue} >= ${diff}] **${successLevel} (${sumValue - diff})** ☠️`;
+
+            msg.reply(`🎲 [${value}]${!dm ? '' : '+' + dm}=**${sumValue}** ${diff || diff === 0 ? isSuccessStr : ''}`);
         } else {
             msg.react('⛔');
         }
