@@ -39,6 +39,7 @@ const parseCommand = (msg) => {
         🪐 **$dm x** - *$dm_x (x characteristic)*
         🪐 **$jump x** - *$jump_x (x DM), DM-2 for unrefined fuel, DM-4 for 100 diameter limit*
         🪐 **$ship** - *ship maintenance*
+        🪐 **$cost** - *cost of living*
         🪐 **$npc x** - *random npc (x optional, number, max 12)*
         `);
         return;
@@ -236,6 +237,7 @@ const parseCommand = (msg) => {
     }
 
     if (msg.content.startsWith('$ship')) {
+        msg.react('🚀');
         msg.reply(`🚀 **Ship maintenance Cost**:
         **Life Support** - 
             Cr1000 per stateroom, 
@@ -251,6 +253,22 @@ const parseCommand = (msg) => {
         **Salary:** Medic Cr3000
         **Salary:** Gunner Cr1000
         **Salary:** Marine Cr1000`);
+    }
+
+    if (msg.content.startsWith('$cost')) {
+        msg.react('💳');
+        msg.reply(`
+        **Very Poor** Cr400💳 *Social Standing 2*
+        **Poor** Cr800💳 *Social Standing 4*
+        **Low** Cr1000💳 *Social Standing 5*
+        **Average** Cr1200💳 *Social Standing 6*
+        **Good** Cr1500💳 *Social Standing 7*
+        **High** Cr2000💳 *Social Standing 8*
+        **Very High** Cr2500💳 *Social Standing 10*
+        **Rich** Cr5000💳 *Social Standing 12*
+        **Very Rich** Cr12000💳 *Social Standing 14*
+        **Ludicrously Rich** Cr20000+💳 *Social Standing 15*
+        `);
     }
 }
 
