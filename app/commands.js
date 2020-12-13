@@ -42,7 +42,7 @@ const parseCommand = (msg) => {
         🪐 **$ship** - *ship maintenance*
         🪐 **$cost** - *cost of living*
         🪐 **$npc x** - *random npc (x optional, number, max 12)*
-        🪐 **$names x** - *random names (x optional, number, max 100)*
+        🪐 **$names x** - *random names (x optional, number, max 50)*
         🪐 **$planet x** - *random planet (x optional, planet code: a.e. D3C6XX1)*
         `);
         return;
@@ -137,7 +137,7 @@ const parseCommand = (msg) => {
         let num = msg.content.split(' ')[1] || 1;
         let rMsg = `
             `;
-        if (num > 100) num = 100;
+        if (num > 50) num = 50;
         for (let i = 0; i < num; i++) {
             rMsg += `🧍 ${num > 1 ? i + 1 : ''} ${randomNames.getName()}
             `;
