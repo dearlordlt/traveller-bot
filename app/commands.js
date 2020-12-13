@@ -122,7 +122,7 @@ const parseCommand = (msg) => {
         for (let i = 0; i < num; i++) {
             const r66 = parseInt(`${r()}${r()}`);
             const rNPCName = charactersNPC.characters.find(val => val.value === r66).name;
-            rMsg += `🧍 ${num > 1 ? num : ''} ${rNPCName} - ${randomNames.getName()}
+            rMsg += `🧍 ${num > 1 ? i + 1 : ''} ${rNPCName} - ${randomNames.getName()}
             `;
         }
         msg.reply(rMsg);
