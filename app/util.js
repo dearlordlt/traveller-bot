@@ -1,4 +1,4 @@
-const SI_POSTFIXES = ["", "k", "Mil", "Bil", "Tril", "Quad", "Quin"];
+const SI_POSTFIXES = ["", "Thousand", "Million", "Billion", "Trillion", "Quadrillion", "Quintillion"];
 
 const bigNumber = (number) => {
 
