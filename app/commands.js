@@ -41,6 +41,7 @@ const parseCommand = (msg) => {
         🪐 **$ship** - *ship maintenance*
         🪐 **$cost** - *cost of living*
         🪐 **$npc x** - *random npc (x optional, number, max 12)*
+        🪐 **$names x** - *random names (x optional, number, max 100)*
         `);
         return;
     }
@@ -123,6 +124,20 @@ const parseCommand = (msg) => {
             const r66 = parseInt(`${r()}${r()}`);
             const rNPCName = charactersNPC.characters.find(val => val.value === r66).name;
             rMsg += `🧍 ${num > 1 ? i + 1 : ''} ${rNPCName} - ${randomNames.getName()}
+            `;
+        }
+        msg.reply(rMsg);
+        return;
+    }
+
+    if (msg.content.startsWith('$names')) {
+        msg.react('🧍');
+        let num = msg.content.split(' ')[1] || 1;
+        let rMsg = `
+            `;
+        if (num > 100) num = 100;
+        for (let i = 0; i < num; i++) {
+            rMsg += `🧍 ${num > 1 ? i + 1 : ''} ${randomNames.getName()}
             `;
         }
         msg.reply(rMsg);
