@@ -1,3 +1,6 @@
+const charactersNPC = require('./random-characters');
+const randomNames = require('./names');
+
 const BOT_PREFIX = '$';
 
 const r = (sides = 6) => (Math.ceil(Math.random() * sides));
@@ -31,14 +34,13 @@ const parseCommand = (msg) => {
         🪐 **$r2** - *roll 2d*
         🪐 **$r66** - *roll d66*
         🪐 **$char** - *generates characteristics*
-        🪐 **$boon** - *rolls boon roll*
-        🪐 **$bane** - *rolls bane roll*
-        🪐 **$boon x** - *$boon x (x modifier)*
-        🪐 **$bane x** - *$bane x (x modifier)*
+        🪐 **$boon x** - *$boon x (x optional modifier)*
+        🪐 **$bane x** - *$bane x (x optional modifier)*
         🪐 **$dm** - *list characteristics*
         🪐 **$dm x** - *$dm_x (x characteristic)*
         🪐 **$jump x** - *$jump_x (x DM), DM-2 for unrefined fuel, DM-4 for 100 diameter limit*
-        🪐 **$ship** - *$ship maintenance*
+        🪐 **$ship** - *ship maintenance*
+        🪐 **$npc** - *random npc*
         `);
         return;
     }
@@ -108,6 +110,14 @@ const parseCommand = (msg) => {
         msg.react('🦮');
         const dm = parseInt(msg.content.split(' ')[1]) || 0;
         msg.reply(`🦮 dm for ${dm} is ${dmVal(dm)}`);
+        return;
+    }
+
+    if (msg.content.startsWith('$npc')) {
+        msg.react('🧍');
+        const r66 = parseInt(`${r()}${r()}`);
+        const rNPCName = charactersNPC.characters.find(val => val.value === r66).name;
+        msg.reply(`🧍 ${rNPCName} - ${randomNames.getName()}`);
         return;
     }
 
