@@ -40,7 +40,7 @@ const parseCommand = (msg) => {
         🪐 **$dm x** - *$dm_x (x characteristic)*
         🪐 **$jump x** - *$jump_x (x DM), DM-2 for unrefined fuel, DM-4 for 100 diameter limit*
         🪐 **$ship** - *ship maintenance*
-        🪐 **$npc** - *random npc*
+        🪐 **$npc x** - *random npc (x optional, number, max 12)*
         `);
         return;
     }
@@ -115,9 +115,17 @@ const parseCommand = (msg) => {
 
     if (msg.content.startsWith('$npc')) {
         msg.react('🧍');
-        const r66 = parseInt(`${r()}${r()}`);
-        const rNPCName = charactersNPC.characters.find(val => val.value === r66).name;
-        msg.reply(`🧍 ${rNPCName} - ${randomNames.getName()}`);
+        let num = msg.content.split(' ')[1] || 1;
+        let rMsg = `
+            `;
+        if (num > 12) num = 12;
+        for (let i = 0; i < num; i++) {
+            const r66 = parseInt(`${r()}${r()}`);
+            const rNPCName = charactersNPC.characters.find(val => val.value === r66).name;
+            rMsg += `🧍 ${num > 1 ? num : ''} ${rNPCName} - ${randomNames.getName()}
+            `;
+        }
+        msg.reply(rMsg);
         return;
     }
 
