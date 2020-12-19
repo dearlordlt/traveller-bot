@@ -23,7 +23,7 @@ const news = [
     `📰 **ONN** [631-10-01] - Imperatoriaus įsakymas: visi veteranai palikę tarnybą per pastaruosius 10 metų netenka pensijos. *Skaityti daugiau...*`,
     `📰 **OLYMPUS FREE MEDIA** [631-08-16] - Atskleista Ponto Magistrato korupcijos schema - Senatas tyli. *Skaityti daugiau...*`,
     `📰 **OLYMPUS FREE MEDIA** [631-10-17] - Imperatorius atstatydino laivyno Legatą Amilio Stulio, Egzekucija tiesiogiai per OFM. *Skaityti daugiau...*`,
-    `📰 **KALYPSO MEDIA** [631-11-19] - Pagrindinės naujienos: Badas Vilkaro teritorijoje, Korporacijų karai, Mažinamos Legijonierių algos, Olimpo 'Legio' nugalėjo Phobo 'Jaučius' 13:9, Jotuno šnipų medžioklė tęsiasi . *Skaityti daugiau...*`,
+    `📰 **KALYPSO MEDIA** [631-11-19] - Pagrindinės naujienos: Badas Vilkaro teritorijoje, Korporacijų karai, Mažinamos Legijonierių algos, Olimpo 'Legio' nugalėjo Phobo 'Jaučius' ${rNum(10, 20)}:${rNum(0, 10)}, Jotuno šnipų medžioklė tęsiasi . *Skaityti daugiau...*`,
     `📰 **ONN** [631-09-01] - Poezijos apie Imperatorių konkursas. Balsuok už nugalėtoją. *Skaityti daugiau...*`,
     `📰 **ONN** [631-11-02] - Eos kosmodrome susišaudymas. Įtariami Jotuno šnipai ieškomi. *Skaityti daugiau...*`,
     `📰 **ONN** [631-11-09] - Metų filmu, vienbalsiai išrinktas 'Imperatorius' - Biografinė drama. Pagr vaidmenyje - Imperatorius Ostas II. *Skaityti daugiau...*`,
