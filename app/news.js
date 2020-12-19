@@ -54,7 +54,7 @@ const why = [
 ];
 
 const getRandomNews = () => {
-    return `${network.random()} ${where.random()} ${what.random()} ${why.random()}. *Skaityti daugiau...*`;
+    return `${network.random()} ${where.random()}, ${why.random()}, ${what.random()}. *Skaityti daugiau...*`;
 }
 
 const news = [
