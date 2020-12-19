@@ -378,7 +378,8 @@ const startFeed = (msg, dm) => {
     if (newsFeedInterval) clearInterval(newsFeed);
     newsFeedInterval = setInterval(() => {
         intervalIndex++;
-        msg.reply(newsFeed.news.random() + ' [' + intervalIndex + ']')
+        const newsFeedRnd = r() > 4 ? newsFeed.news.random() : newsFeed.getRandomNews();
+        msg.reply(newsFeedRnd + ' [' + intervalIndex + ']')
             .then(ms => {
                 ms.delete({ timeout: 1000 * 60 * dm });
             }).catch(err => {

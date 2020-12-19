@@ -4,6 +4,59 @@ const rNum = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+const network = [
+    `📰 **GALAXY NEWS** 🔀`,
+    `📰 **ONN** 🔀`,
+    `📰 **DEIMOS TODAY** 🔀`,
+    `📰 **VULCAN SUN** 🔀`,
+    `📰 **OLYMPUS FREE MEDIA** 🔀`,
+    `📰 **CORPORATE NEWS** 🔀`,
+    `📰 **PIRATE BAY** 🔀`,
+];
+
+const where = [
+    `Olimpo sistemoje`,
+    `Avalone`,
+    `Jotune`,
+    `Vulkane`,
+    `Vestoje`,
+    `Ares sistemoje`,
+    `Egeroje`,
+    `Deime`,
+    `Protėjuje`,
+    `Irkaloje`,
+    `Liutecijoje`,
+    `Rėjos sistemoje`,
+    `Horoje`,
+    `Minevroje`
+];
+
+const what = [
+    `medienos kainos nukrito ${rNum(1, 20)},${rNum(0, 100)}%`,
+    `skelbiama visuotinė mobilizacija`,
+    `vergų kainos pakilo ${rNum(1, 20)},${rNum(0, 100)}%`,
+    `sutriko bankinės sistemos`,
+    `vyksta neeilinė senato sesija`,
+    `įvesta komendanto valanda`,
+    `skelbiamos gladiatorių žaidynės`,
+    `įvestas embargo ginklams`,
+    `sunkiųjų metalų kainos krito ${rNum(1, 20)},${rNum(0, 100)}%`,
+];
+
+const why = [
+    `dėl įtampos žemesniuose socialiniuose sluoksniuose`,
+    `dėl besitęsiančio vergų sukilimo`,
+    `dėl padažnėjusių piratų antpuolių`,
+    `dėl įtemptos politinės situacijos`,
+    `dėl nesibaigiančių sekso skandalų senate`,
+    `dėl ultra populistų riaušių`,
+    `dėl nežabojamos bedarbystės`,
+];
+
+const getRandomNews = () => {
+    return `${network.random()} ${where.random()} ${what.random()} ${what.random(why)}. *Skaityti daugiau...*`;
+}
+
 const news = [
     `📰 **GALAXY NEWS** - Hado mokslininkai sėkmingai išbandė 'Gero Elgesio' implantą ant kalinių, Respublikos Konsulas įtatymu patvirtino leidimą naudoti implantą ant piliečių. *Skaityti daugiau...*`,
     `📰 **GALAXY NEWS** - Hado sistemoje atlikti naujo Laivyno Flagmano Enėjas bandymai. Legatai tvirtina, kad naujas flagmanas atstos Aurėjos laivą. *Skaityti daugiau...*`,
@@ -50,4 +103,5 @@ const news = [
 
 module.exports = {
     news,
+    getRandomNews,
 }
