@@ -14,7 +14,7 @@ const news = [
     `📰 **UNKNOWN SOURCE** [XXX-XX-XX] - U8SXa21pbmdhaSBudXN0YXR5dG9zICdCQVrEli0yMScga29vcmRpbmF0xJdzIFswMzU0MzU0NTM0ODk5OjU1NTYzMzQzNTg3OTo6OTg3NzIzMjM3NTc2NV0g. *Skaityti daugiau...*`,
     `📰 **NOVI HOMINES** [631-09-30] - Naujausias 632 metų riaušių kalendorius jau dabar, tik 9,99Cr. *Skaityti daugiau...*`,
     `📰 **ONN** [631-10-01] - Imperatoriaus įsakymas: visi veteranai palikę tarnybą per pastaruosius 10 metų netenka pensijos. *Skaityti daugiau...*`,
-    `📰 **OLYMPUS FREE MEDIA** [631-08-16] - ATskleista Ponto Magistrato korupcijos schema - Senatas tyli. *Skaityti daugiau...*`,
+    `📰 **OLYMPUS FREE MEDIA** [631-08-16] - Atskleista Ponto Magistrato korupcijos schema - Senatas tyli. *Skaityti daugiau...*`,
 ];
 
 module.exports = {
