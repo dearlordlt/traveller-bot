@@ -363,6 +363,7 @@ Array.prototype.random = function () {
 const startFeed = (msg) => {
     if (newsFeedInterval) clearInterval(newsFeed);
     newsFeedInterval = setInterval(() => {
+        intervalIndex++;
         msg.reply(newsFeed.news.random() + ' [' + intervalIndex + ']')
             .then(ms => {
                 ms.delete({ timeout: 1000 * 60 * 5 });
