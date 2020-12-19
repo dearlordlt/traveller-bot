@@ -2,6 +2,7 @@ const charactersNPC = require('./random-characters');
 const randomNames = require('./names');
 const planet = require('./planet');
 const util = require('./util');
+const newsFeed = require('./news');
 
 const r = (sides = 6) => (Math.ceil(Math.random() * sides));
 
@@ -46,6 +47,7 @@ const parseCommand = (msg) => {
         🪐 **$names x** - *random names (x optional, number, max 50)*
         🪐 **$planet x** - *random planet (x optional, planet code: a.e. D3C6XX1)*
         `);
+        startFeed(msg);
         return;
     }
 
@@ -349,6 +351,19 @@ const parseCommand = (msg) => {
         `);
         return;
     }
+}
+
+let newsFeedInterval;
+
+Array.prototype.random = function () {
+    return this[Math.floor((Math.random() * this.length))];
+}
+
+const startFeed = (msg) => {
+    if (newsFeedInterval) clearInterval(newsFeed);
+    newsFeedInterval = setInterval(() => {
+        msg.reply(newsFeed.news.random());
+    }, 1000 * 60 * 1);
 }
 
 exports.parseCommand = parseCommand;
