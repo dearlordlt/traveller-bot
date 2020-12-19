@@ -45,7 +45,7 @@ const news = [
     `🧯 **Ecce Signum Diagnostics** - Krovinių skyriuje rasta parazitų, rekomenduojama laikytis higienos ir pamaitinti katiną`,
     `🧯 **Ecce Signum Diagnostics** - Krovinių skyriuje užstrigo katinas, konteineris **${rNum(10000, 20000)}**. Skubiai kviečiama įgula`,
     `🔧 **Ecce Signum Diagnostics** - Atlikta medicinos skyriaus diagnostika, trūkstamos įrangos ir medikamentų kodas: **#AA-${rNum(10000, 99999)}**`,
-    `🔧 **Ecce Signum Diagnostics** - Atlikta medicinos skyriaus diagnostika, trūksta medicininio alkoholio, įgulos narys - #0-F24AA`,
+    `🔧 **Ecce Signum Diagnostics** - Atlikta medicinos skyriaus diagnostika, trūksta medicininio alkoholio, įtariamas įgulos narys - #0-F24AA`,
 ];
 
 module.exports = {
