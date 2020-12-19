@@ -353,7 +353,7 @@ const parseCommand = (msg) => {
 
     if (msg.content.startsWith('$stop')) {
         if (newsFeedInterval) {
-            clearInterval(newsFeed);
+            clearInterval(newsFeedInterval);
             msg.react('🆗');
         }
         return;
