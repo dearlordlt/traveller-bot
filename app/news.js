@@ -1,3 +1,9 @@
+const rNum = (min, max) => {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 const news = [
     `📰 **GALAXY NEWS** [631-10-15] - Hado mokslininkai sėkmingai išbandė 'Gero Elgesio' implantą ant kalinių, Respublikos Konsulas įtatymu patvirtino leidimą naudoti implantą ant piliečių. *Skaityti daugiau...*`,
     `📰 **ONN** [631-09-17] - Numalšintas Phano vergų sukilimas pareikalavo tūkstančių legijonierių gyvybių - aukų pagerbimas tiesiogiai per ONN. *Skaityti daugiau...*`,
@@ -15,6 +21,12 @@ const news = [
     `📰 **NOVI HOMINES** [631-09-30] - Naujausias 632 metų riaušių kalendorius jau dabar, tik 9,99Cr. *Skaityti daugiau...*`,
     `📰 **ONN** [631-10-01] - Imperatoriaus įsakymas: visi veteranai palikę tarnybą per pastaruosius 10 metų netenka pensijos. *Skaityti daugiau...*`,
     `📰 **OLYMPUS FREE MEDIA** [631-08-16] - Atskleista Ponto Magistrato korupcijos schema - Senatas tyli. *Skaityti daugiau...*`,
+    `⚠️ **Ecce Signum Diagnostics** - Atlikta Gyvybės palaikymo sistemų diagnostika, tikimybė isgyventi sekantį skrydį - 97,99%`,
+    `☢️ **Ecce Signum Diagnostics** - Diagnostika: Keleivio 0-F24AA alkoholio atsargos pavojuje (Liko ${rNum(2, 100)} alkoholio vienetų), rekomendacija - pasipildyti atsargas`,
+    `📵 **Ecce Signum Diagnostics** - Laivo sensorių diagnostika: neveikia ${rNum(0, 10)} posistemių, prašom susisiekti su sensorių inžinieriumi`,
+    `🧰 **Ecce Signum Diagnostics** - Atlikta laivo valdymo kalibracija, tikimybė atlikti manevrą padidėjo 0,00001%`,
+    `🧯 **Ecce Signum Diagnostics** - Krovinių skyriuje rasta parazitų, rekomenduojama laikytis higienos ir pamaitinti katiną`,
+    `🔧 **Ecce Signum Diagnostics** - Atlikta medicinos skyriaus diagnostika, trūkstamos įrangos ir medikamentų kodas: **WW8UcZQi**`,
 ];
 
 module.exports = {
