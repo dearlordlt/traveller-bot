@@ -362,7 +362,7 @@ const parseCommand = (msg) => {
     if (msg.content.startsWith('$news ')) {
         const dm = msg.content.split(' ')[1] || 1;
         msg.react('🆗');
-        startFeed(msg, dm);
+        startFeed(msg, +dm);
         return;
     }
 }
