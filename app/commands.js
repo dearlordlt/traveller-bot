@@ -354,6 +354,7 @@ const parseCommand = (msg) => {
 }
 
 let newsFeedInterval;
+let intervalIndex = 0;
 
 Array.prototype.random = function () {
     return this[Math.floor((Math.random() * this.length))];
@@ -362,7 +363,7 @@ Array.prototype.random = function () {
 const startFeed = (msg) => {
     if (newsFeedInterval) clearInterval(newsFeed);
     newsFeedInterval = setInterval(() => {
-        msg.reply(newsFeed.news.random() + ' ' + Date.now().toTimeString())
+        msg.reply(newsFeed.news.random() + ' [' + intervalIndex + ']')
             .then(ms => {
                 ms.delete({ timeout: 1000 * 60 * 5 });
             }).catch(err => {
