@@ -351,6 +351,14 @@ const parseCommand = (msg) => {
         `);
         return;
     }
+
+    if (msg.content.startsWith('$stop')) {
+        if (newsFeedInterval) {
+            clearInterval(newsFeed);
+            msg.react('🆗');
+        }
+        return;
+    }
 }
 
 let newsFeedInterval;
