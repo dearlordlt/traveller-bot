@@ -47,7 +47,6 @@ const parseCommand = (msg) => {
         🪐 **$names x** - *random names (x optional, number, max 50)*
         🪐 **$planet x** - *random planet (x optional, planet code: a.e. D3C6XX1)*
         `);
-        startFeed(msg);
         return;
     }
 
@@ -359,6 +358,12 @@ const parseCommand = (msg) => {
         }
         return;
     }
+
+    if (msg.content.startsWith('$news ')) {
+        const dm = msg.content.split(' ')[1] || 1;
+        startFeed(msg, dm);
+        return;
+    }
 }
 
 let newsFeedInterval;
@@ -368,17 +373,17 @@ Array.prototype.random = function () {
     return this[Math.floor((Math.random() * this.length))];
 }
 
-const startFeed = (msg) => {
+const startFeed = (msg, dm) => {
     if (newsFeedInterval) clearInterval(newsFeed);
     newsFeedInterval = setInterval(() => {
         intervalIndex++;
         msg.reply(newsFeed.news.random() + ' [' + intervalIndex + ']')
             .then(ms => {
-                ms.delete({ timeout: 1000 * 60 * 5 });
+                ms.delete({ timeout: 1000 * 60 * dm });
             }).catch(err => {
                 console.error(err);
             });
-    }, 1000 * 60 * 5);
+    }, 1000 * 60 * dm);
 }
 
 exports.parseCommand = parseCommand;
