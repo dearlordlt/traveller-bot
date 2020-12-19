@@ -362,13 +362,13 @@ Array.prototype.random = function () {
 const startFeed = (msg) => {
     if (newsFeedInterval) clearInterval(newsFeed);
     newsFeedInterval = setInterval(() => {
-        msg.reply(newsFeed.news.random())
+        msg.reply(newsFeed.news.random() + ' ' + Date.now())
             .then(ms => {
                 ms.delete({ timeout: 1000 * 60 * 5 });
             }).catch(err => {
                 console.error(err);
             });
-    }, 1000 * 60 * 1);
+    }, 1000 * 60 * 5);
 }
 
 exports.parseCommand = parseCommand;
