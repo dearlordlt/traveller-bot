@@ -89,7 +89,7 @@ const news = () => {
         `📰 **TRUTH OF AVALON** - Gražiausių maldų konkursas, balsavimas - 5Cr. *Skaityti daugiau...*`,
         `📰 **JOTUN PATRIOT** - Meninis filmas: 'Šlovė vadui'. Pagr. vaidmenyje - Otto Valerius. *Skaityti daugiau...*`,
         `📰 **VULCAN SUN** - Tiesioginė Senato posedžio transliacija, balsavimas dėl reparacijų Olimpui nutraukimo. *Skaityti daugiau...*`,
-        `📰 **PIRATE BAY** - Turintiems informacijos apie krovinius, mar6rutus arba menkai saugomas kosmines bazes premijos nuo Cr5000. *Skaityti daugiau...*`,
+        `📰 **PIRATE BAY** - Turintiems informacijos apie krovinius, maršrutus arba menkai saugomas kosmines bazes premijos nuo Cr5000. *Skaityti daugiau...*`,
         `📰 **CORPORATE NEWS** - OLIMPO BIRŽA - Mare nostrum -1.${rNum(0, 10)}, Gladius Inc +2.${rNum(0, 10)}, Legio Collegium -0.${rNum(0, 10)}. *Skaityti daugiau...*`,
         `⚠️ **Ecce Signum Diagnostics** - Atlikta Gyvybės palaikymo sistemų diagnostika, tikimybė isgyventi sekantį skrydį - ${rNum(91, 99)},${rNum(0, 99)}%`,
         `⚠️ **Ecce Signum Diagnostics** - Atlikta Gyvybės palaikymo sistemų diagnostika, tikimybė isgyventi sekantį skrydį -${rNum(91, 99)},${rNum(0, 99)}%`,
@@ -123,10 +123,10 @@ const person = [
 
 const whatHappened = () => {
     return [
-        `FROM: ISS/ES - Jūsų kambaryje liko uždarytas katinas, jei nesiimsite veiksmų, katinas išgyvens ${rNum(3, 8)} ir sunaikins ${rNum(1, 99)}% Jūsų asmeninių daiktų`,
+        `FROM: ISS/ES - Jūsų kambaryje liko uždarytas katinas, jei nesiimsite veiksmų, katinas išgyvens ${rNum(3, 8)} parų ir sunaikins ${rNum(1, 99)}% Jūsų asmeninių daiktų`,
         `FROM: GALDIUS Inc: Išpardavimas: Pasinaudok 5% nuolaidos kodu #DD-${rNum(0, 999) + 1000}`,
         `FROM: Deimo Princas: Deimo princas paliko jums palikimą Cr${rNum(0, 999) * 1000}, perveskite Cr200 į ${rNum(0, 999) + 1000}-${rNum(0, 999) + 1000}-${rNum(0, 999) + 1000}-${rNum(0, 999) + 1000}-${rNum(0, 999) + 1000} saskaitą kad patvirtinti savo asmenybę!`,
-        `FROM: ISS/ES - Jūsų kajutė ${rNum(25, 99)}% sutvarkyta pagal nustatytus reikalavimus, pra6ome palaikyti 100% tvarką.`,
+        `FROM: ISS/ES - Jūsų kajutė ${rNum(25, 99)}% sutvarkyta pagal nustatytus reikalavimus, prašome palaikyti 100% tvarką.`,
         `FROM: Džiugi naujiena: Mitros paslaptys prieinamos visiems, perveskite Cr200 į ${rNum(0, 999) + 1000}-${rNum(0, 999) + 1000}-${rNum(0, 999) + 1000}-${rNum(0, 999) + 1000}-${rNum(0, 999) + 1000} saskaitą kad sužinoti daugiau`,
         `FROM: LEGIO CXIX: Renka naujus legionierius, pauskite **čia** kad sužinoti daugiau.`,
         `FROM: Kosminiai Bikiniai: Negavome prenumeratos mokęsčio už praeitus metus, perveskite Cr200 į ${rNum(0, 999) + 1000}-${rNum(0, 999) + 1000}-${rNum(0, 999) + 1000}-${rNum(0, 999) + 1000}-${rNum(0, 999) + 1000} saskaitą kad atnaujinti prenumeratą.`,
