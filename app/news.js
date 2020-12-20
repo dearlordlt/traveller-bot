@@ -55,6 +55,8 @@ const why = [
     `dėl nesibaigiančių sekso skandalų senate`,
     `dėl ultra populistų riaušių`,
     `dėl nežabojamos bedarbystės`,
+    `dėl tarpkorporacinių konfliktų`,
+    `dėl sunkios ekonominės situacijos`,
 ];
 
 const getRandomNews = () => {
