@@ -88,6 +88,7 @@ const news = () => {
         `📰 **ONN** - 10 patiekalų imperatoriaus Osto II valdymo metinių šventiniam stalui. *Skaityti daugiau...*`,
         `📰 **ONN** - Imperatoriaus įsakymas: gladiatorių kautynės bus vykdomos kiekvieną savaitę visose pagrindinėse planetose. Transliacijos nuo šiol nemokamos. Ave Caesar. *Skaityti daugiau...*`,
         `📰 **ONN** - Imperatoriaus įsakymas: nuo šiol draudžiama naujagimius vadinti vardais prasidedančiais 'D' raide, bauda 5000Cr. *Skaityti daugiau...*`,
+        `📰 **ONN** - Arkanum sulaikė dar vieną žinomą piratą Olimpo sektoriuje. ${names.getName()} egzekucija tiesiogiai tik per ONN. *Skaityti daugiau...*`,
         `📰 **TRUTH OF AVALON** - Gražiausių maldų konkursas, balsavimas - 5Cr. *Skaityti daugiau...*`,
         `📰 **JOTUN PATRIOT** - Meninis filmas: 'Šlovė vadui'. Pagr. vaidmenyje - Otto Valerius. *Skaityti daugiau...*`,
         `📰 **VULCAN SUN** - Tiesioginė Senato posedžio transliacija, balsavimas dėl reparacijų Olimpui nutraukimo. *Skaityti daugiau...*`,
