@@ -134,7 +134,7 @@ const whatHappened = () => {
 };
 
 const getPersonalAlert = () => {
-    return `TO: ${person.random()} ${whatHappened().random()}`;
+    return `TO: **${person.random()}** ${whatHappened().random()}`;
 }
 
 module.exports = {
