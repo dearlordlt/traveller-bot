@@ -385,6 +385,8 @@ const startFeed = (msg, dm, dd) => {
             newsFeedRnd = newsFeed.getRandomNews();
         } else if (ev === 5) {
             newsFeedRnd = newsFeed.getPersonalAlert();
+        } else if (ev === 4 || ev === 3) {
+            newsFeedRnd = newsFeed.shipEvents();
         } else {
             newsFeedRnd = newsFeed.news().random();
         }

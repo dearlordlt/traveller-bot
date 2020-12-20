@@ -67,7 +67,7 @@ const news = () => {
         `📰 **GALAXY NEWS** - Hado sistemoje atlikti naujo Laivyno Flagmano Enėjas bandymai. Legatai tvirtina, kad naujas flagmanas atstos Aurėjos laivą. *Skaityti daugiau...*`,
         `📰 **ONN** - Numalšintas Phano vergų sukilimas pareikalavo tūkstančių legijonierių gyvybių - aukų pagerbimas tiesiogiai per ONN. *Skaityti daugiau...*`,
         `📰 **DEIMOS TODAY** - Trys būdai išsirinkti paklusnų vergą. *Skaityti daugiau...*`,
-        `📰 **VULCAN SUN** - Kipro Gubernatorius Aurelijus Sula suimtas dėl iššvaistytų lėšū karo su Olimpu metu, laikinas gubernatorius Olivijus Sula suteikė malonę savo tėvui. *Skaityti daugiau...*`,
+        `📰 **VULCAN SUN** - Kipro Magistratas ${names.getName()} suimtas dėl iššvaistytų lėšų karo su Olimpu metu, laikinas gubernatorius Olivijus Sula suteikė malonę savo tėvui. *Skaityti daugiau...*`,
         `📰 **ONN** - Senato Tribūno rinkimams artėjant - ką reikia žinoti piliečiui?  *Skaityti daugiau...*`,
         `📰 **ONN** - Kaip atpažinti Jotuno agentą?  *Skaityti daugiau...*`,
         `📰 **TRUTH OF AVALON** - Norite skelbti Mitros tiesas galaktikoje? Sužinokite kaip išgelbėti savo sielą. *Skaityti daugiau...*`,
@@ -100,6 +100,11 @@ const news = () => {
         `📰 **SPORTS 24** - Eos 'Argonautai' vs Zeus 'Jaučiai' ${rNum(0, 20)} : ${rNum(0, 20)}, naudingiausias žaidėjas - ${names.getName()}`,
         `📰 **SPORTS 24** - Romulo 'Remai' vs Remulo 'Romai' ${rNum(0, 20)} : ${rNum(0, 20)}, naudingiausias žaidėjas - ${names.getName()}`,
         `📰 **SPORTS 24** - Naudingiausiu metų žaidėju ištinktas ${names.getName()}, metų gladiatorius: ${names.getName()}, didžiausias sporto nusivylimas: ${names.getName()}`,
+    ]
+};
+
+const shipEvents = () => {
+    return [
         `⚠️ **Ecce Signum Diagnostics** - Atlikta Gyvybės palaikymo sistemų diagnostika, tikimybė isgyventi sekantį skrydį - ${rNum(91, 99)},${rNum(0, 99)}%`,
         `⚠️ **Ecce Signum Diagnostics** - Atlikta Gyvybės palaikymo sistemų diagnostika, tikimybė isgyventi sekantį skrydį -${rNum(91, 99)},${rNum(0, 99)}%`,
         `⚠️ **Ecce Signum Diagnostics** - Atlikta Gyvybės palaikymo sistemų diagnostika, rekomenduojama nesinaudoti cryo kapsule #${rNum(1, 7)}`,
@@ -121,8 +126,8 @@ const news = () => {
         `🔥 **Ecce Signum Diagnostics** - TO:${person.random()}, **priminimas**: susitvarkyti betvarkę virtuvėje, nesusitvarkius bus atjungta šilto vandens duše privilegija`,
         `🔥 **Ecce Signum Diagnostics** - TO:${person.random()}, **priminimas**: Jūsų siunta nuo *Žurnalas Kosminiai Bikiniai - naujausias numeris* randasi konteineryje #**${rNum(10000, 20000)}**`,
         `🔥 **Ecce Signum Diagnostics** - TO:${person.random()}, **priminimas**: Jūsų kambario kodas *kambarys123* nebegalioja, prašome pasikeisti prie artimiausio terminalo.`,
-    ]
-};
+    ];
+}
 
 const person = [
     `✉️ Brutanus Pictor`,
@@ -143,9 +148,9 @@ const getAccount = () => {
 
 const whatHappened = () => {
     return [
-        `FROM: **ISS/ES**: Jūsų kambaryje liko uždarytas katinas, jei nesiimsite veiksmų, katinas išgyvens ${rNum(3, 8)} parų ir sunaikins ${rNum(1, 99)}% Jūsų asmeninių daiktų`,
+        `FROM: **ISS/ES**: Jūsų kambaryje liko uždarytas katinas, jei nesiimsite veiksmų, katinas išgyvens ${rNum(3, 8)} paras/ų ir sunaikins ${rNum(1, 99)}% Jūsų asmeninių daiktų`,
         `FROM: **GALDIUS Inc**: Išpardavimas: Pasinaudok 5% nuolaidos kodu #DD-${rNum(0, 999) + 1000}`,
-        `FROM: **Deimo Princas**: Deimo princas paliko jums palikimą Cr${rNum(0, 999) * 1000}, perveskite Cr200 į ${getAccount()} saskaitą kad patvirtinti savo asmenybę!`,
+        `FROM: **Deimo Princo Advokatas**: Deimo princas paliko jums palikimą - Cr${rNum(0, 999) * rNum(999, 9999)}, perveskite Cr200 į ${getAccount()} saskaitą kad patvirtinti savo asmenybę!`,
         `FROM: **ISS/ES** - Jūsų kajutė ${rNum(25, 99)}% sutvarkyta pagal nustatytus reikalavimus, prašome palaikyti 100% tvarką.`,
         `FROM: **Džiugi naujiena**: Mitros paslaptys prieinamos visiems, perveskite Cr200 į ${getAccount()} saskaitą kad sužinoti daugiau`,
         `FROM: **LEGIO CXIX**: Renka naujus legionierius, pauskite **čia** kad sužinoti daugiau.`,
@@ -161,4 +166,5 @@ module.exports = {
     news,
     getRandomNews,
     getPersonalAlert,
+    shipEvents,
 }
