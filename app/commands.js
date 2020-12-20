@@ -385,7 +385,7 @@ const startFeed = (msg, dm) => {
         } else if (ev === 5) {
             newsFeedRnd = newsFeed.getPersonalAlert();
         } else {
-            newsFeedRnd = newsFeed.news.random();
+            newsFeedRnd = newsFeed.news().random();
         }
         msg.reply(newsFeedRnd + ' [' + intervalIndex + '][' + ev + ']')
             .then(ms => {
