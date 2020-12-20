@@ -113,11 +113,14 @@ const news = () => {
         `🧰 **Ecce Signum Diagnostics** - Atlikta laivo valdymo kalibracija, tikimybė atlikti manevrą sumažėjo 0,00${rNum(1, 99)}%`,
         `🧰 **Ecce Signum Diagnostics** - Atlikta laivo piloto funkcijų diagnostika, rekomenduojama neatlikinėti sudėtingų manevrų esant dideliam greičiui`,
         `🧯 **Ecce Signum Diagnostics** - Krovinių skyriuje rasta parazitų, rekomenduojama laikytis higienos ir pamaitinti katiną`,
-        `🧯 **Ecce Signum Diagnostics** - Krovinių skyriuje užstrigo katinas, konteineris **${rNum(10000, 20000)}**. Skubiai kviečiama įgula`,
+        `🧯 **Ecce Signum Diagnostics** - Krovinių skyriuje užstrigo katinas, konteineris #**${rNum(10000, 20000)}**. Skubiai kviečiama įgula`,
         `🧯 **Ecce Signum Diagnostics** - Krovinių skyriaus diagnostika, rekomenduojama patikrinti konteinerį **#${rNum(10000, 20000)}**. Skubiai kviečiama įgula`,
         `🔧 **Ecce Signum Diagnostics** - Atlikta medicinos skyriaus diagnostika, trūkstamos įrangos ir medikamentų kodas: **#AA-${rNum(10000, 99999)}**`,
         `🔧 **Ecce Signum Diagnostics** - Atlikta medicinos skyriaus diagnostika, trūksta medicininio alkoholio, įtariamas įgulos narys - #0-F24AA`,
         `🔧 **Ecce Signum Diagnostics** - Atlikta medicinos skyriaus diagnostika, rekomenduojama nelaikyti ginklų organų atauginimo kapsulėje`,
+        `🔥 **Ecce Signum Diagnostics** - TO:${person.random()}, **priminimas**: susitvarkyti betvarkę virtuvėje, nesusitvarkius bus atjungta šilto vandens duše privilegija`,
+        `🔥 **Ecce Signum Diagnostics** - TO:${person.random()}, **priminimas**: Jūsų siunta nuo *Žurnalas Kosminiai Bikiniai - naujausias numeris* randasi konteineryje #**${rNum(10000, 20000)}**`,
+        `🔥 **Ecce Signum Diagnostics** - TO:${person.random()}, **priminimas**: Jūsų kambario kodas *kambarys123* nebegalioja, prašome pasikeisti prie artimiausio terminalo.`,
     ]
 };
 
@@ -127,7 +130,6 @@ const person = [
     `✉️ Alexios #0-F24AA`,
     `✉️ Felicius Cupitas Albanus "Atsuktuvas"`,
     `✉️ Lucijus Flavijus`,
-
 ];
 
 const getAccount = () => {
