@@ -1,3 +1,5 @@
+const names = require('./names');
+
 const rNum = (min, max) => {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -91,6 +93,11 @@ const news = () => {
         `📰 **VULCAN SUN** - Tiesioginė Senato posedžio transliacija, balsavimas dėl reparacijų Olimpui nutraukimo. *Skaityti daugiau...*`,
         `📰 **PIRATE BAY** - Turintiems informacijos apie krovinius, maršrutus arba menkai saugomas kosmines bazes premijos nuo Cr5000. *Skaityti daugiau...*`,
         `📰 **CORPORATE NEWS** - OLIMPO BIRŽA - Mare nostrum ${rNum(0, 1) === 0 ? '-' : '+'}${rNum(0, 2)}.${rNum(0, 10)}, Gladius Inc ${rNum(0, 1) === 0 ? '-' : '+'}${rNum(0, 5)}.${rNum(0, 10)}, Legio Collegium ${rNum(0, 1) === 0 ? '-' : '+'}${rNum(0, 2)}.${rNum(0, 10)}. Norite daugiau Biržos naujienų? Prenumerata Cr3000 *Skaityti daugiau...*`,
+        `📰 **SPORTS 24** - ${where.random()} vykusiose gladiatorių žaidynėse triumfavo ${names.getName()}`,
+        `📰 **SPORTS 24** - Vulkano 'Raketos' vs Arėjo 'Liūtus' ${rNum(0, 20)} : ${rNum(0, 20)}, naudingiausias žaidėjas - ${names.getName()}`,
+        `📰 **SPORTS 24** - Olimpo 'Legio' vs Minevros 'Medūzos' ${rNum(0, 20)} : ${rNum(0, 20)}, naudingiausias žaidėjas - ${names.getName()}`,
+        `📰 **SPORTS 24** - Eos 'Argonautai' vs Romulo 'Remai' ${rNum(0, 20)} : ${rNum(0, 20)}, naudingiausias žaidėjas - ${names.getName()}`,
+        `📰 **SPORTS 24** - Naudingiausiu metų žaidėju ištinktas ${names.getName()}, metų gladiatorius: ${names.getName()}, didžiausias sporto nusivylimas: ${names.getName()}`,
         `⚠️ **Ecce Signum Diagnostics** - Atlikta Gyvybės palaikymo sistemų diagnostika, tikimybė isgyventi sekantį skrydį - ${rNum(91, 99)},${rNum(0, 99)}%`,
         `⚠️ **Ecce Signum Diagnostics** - Atlikta Gyvybės palaikymo sistemų diagnostika, tikimybė isgyventi sekantį skrydį -${rNum(91, 99)},${rNum(0, 99)}%`,
         `⚠️ **Ecce Signum Diagnostics** - Atlikta Gyvybės palaikymo sistemų diagnostika, rekomenduojama nesinaudoti cryo kapsule #${rNum(1, 7)}`,
