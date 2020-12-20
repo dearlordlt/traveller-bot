@@ -90,7 +90,7 @@ const news = () => {
         `📰 **JOTUN PATRIOT** - Meninis filmas: 'Šlovė vadui'. Pagr. vaidmenyje - Otto Valerius. *Skaityti daugiau...*`,
         `📰 **VULCAN SUN** - Tiesioginė Senato posedžio transliacija, balsavimas dėl reparacijų Olimpui nutraukimo. *Skaityti daugiau...*`,
         `📰 **PIRATE BAY** - Turintiems informacijos apie krovinius, maršrutus arba menkai saugomas kosmines bazes premijos nuo Cr5000. *Skaityti daugiau...*`,
-        `📰 **CORPORATE NEWS** - OLIMPO BIRŽA - Mare nostrum -1.${rNum(0, 10)}, Gladius Inc +2.${rNum(0, 10)}, Legio Collegium -0.${rNum(0, 10)}. *Skaityti daugiau...*`,
+        `📰 **CORPORATE NEWS** - OLIMPO BIRŽA - Mare nostrum ${rNum(0, 1) === 0 ? '-' : '+'}${rNum(0, 2)}.${rNum(0, 10)}, Gladius Inc ${rNum(0, 1) === 0 ? '-' : '+'}${rNum(0, 5)}.${rNum(0, 10)}, Legio Collegium ${rNum(0, 1) === 0 ? '-' : '+'}${rNum(0, 2)}.${rNum(0, 10)}. Norite daugiau Biržos naujienų? Prenumerata Cr3000 *Skaityti daugiau...*`,
         `⚠️ **Ecce Signum Diagnostics** - Atlikta Gyvybės palaikymo sistemų diagnostika, tikimybė isgyventi sekantį skrydį - ${rNum(91, 99)},${rNum(0, 99)}%`,
         `⚠️ **Ecce Signum Diagnostics** - Atlikta Gyvybės palaikymo sistemų diagnostika, tikimybė isgyventi sekantį skrydį -${rNum(91, 99)},${rNum(0, 99)}%`,
         `⚠️ **Ecce Signum Diagnostics** - Atlikta Gyvybės palaikymo sistemų diagnostika, rekomenduojama nesinaudoti cryo kapsule #${rNum(1, 7)}`,
