@@ -80,7 +80,7 @@ const news = () => {
         `📰 **NOVI HOMINES** - Naujausias 632 metų riaušių kalendorius jau dabar, tik 9,99Cr. *Skaityti daugiau...*`,
         `📰 **ONN** - Imperatoriaus įsakymas: visi veteranai palikę tarnybą per pastaruosius 10 metų netenka pensijos. *Skaityti daugiau...*`,
         `📰 **OLYMPUS FREE MEDIA** - Atskleista Ponto Magistrato korupcijos schema - Senatas tyli. *Skaityti daugiau...*`,
-        `📰 **OLYMPUS FREE MEDIA** - Imperatorius atstatydino laivyno Legatą Amilio Stulio, Egzekucija tiesiogiai per OFM. *Skaityti daugiau...*`,
+        `📰 **OLYMPUS FREE MEDIA** - Imperatorius atstatydino laivyno Legatą - ${names.getName()}, Egzekucija tiesiogiai per OFM. *Skaityti daugiau...*`,
         `📰 **KALYPSO MEDIA** - Pagrindinės naujienos: Badas Vilkaro teritorijoje, Korporacijų karai, Mažinamos Legijonierių algos, Olimpo 'Legio' nugalėjo Phobo 'Jaučius' ${rNum(10, 20)}:${rNum(0, 10)}, Jotuno šnipų medžioklė tęsiasi . *Skaityti daugiau...*`,
         `📰 **ONN** - Poezijos apie Imperatorių konkursas. Balsuok už nugalėtoją. *Skaityti daugiau...*`,
         `📰 **ONN** - Eos kosmodrome susišaudymas. Įtariami Jotuno šnipai ieškomi. *Skaityti daugiau...*`,
