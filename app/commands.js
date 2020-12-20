@@ -378,8 +378,16 @@ const startFeed = (msg, dm) => {
     if (newsFeedInterval) clearInterval(newsFeed);
     newsFeedInterval = setInterval(() => {
         intervalIndex++;
-        const newsFeedRnd = r() > 4 ? newsFeed.news.random() : newsFeed.getRandomNews();
-        msg.reply(newsFeedRnd + ' [' + intervalIndex + ']')
+        let newsFeedRnd = ``;
+        let ev = r();
+        if (ev === 6) {
+            newsFeedRnd = newsFeed.getRandomNews();
+        } else if (ev === 5) {
+            newsFeedRnd = newsFeed.getPersonalAlert();
+        } else {
+            newsFeedRnd = newsFeed.news.random();
+        }
+        msg.reply(newsFeedRnd + ' [' + intervalIndex + '][' + ev + ']')
             .then(ms => {
                 ms.delete({ timeout: 1000 * 60 * dm });
             }).catch(err => {
