@@ -122,7 +122,7 @@ const getAccount = () => {
 
 const whatHappened = () => {
     return [
-        `FROM: **ISS/ES**: Jūsų kambaryje liko uždarytas katinas, jei nesiimsite veiksmų, katinas išgyvens ${rNum(3, 8)} paras/ų ir sunaikins ${rNum(1, 99)}% Jūsų asmeninių daiktų`,
+        `FROM: **ISS/ES**: Jūsų kambaryje liko uždarytas katinas, jei nesiimsite veiksmų, katinas sunaikins ${rNum(1, 99)}% Jūsų asmeninių daiktų`,
         `FROM: **GALDIUS Inc**: Išpardavimas: Pasinaudok 5% nuolaidos kodu #DD-${rNum(0, 999) + 1000}`,
         `FROM: **Deimo Princo Advokatas**: Deimo princas paliko jums palikimą - Cr${rNum(0, 999) * rNum(999, 9999)}, perveskite Cr200 į ${getAccount()} saskaitą kad patvirtinti savo asmenybę!`,
         `FROM: **ISS/ES** - Jūsų kajutė ${rNum(25, 99)}% sutvarkyta pagal nustatytus reikalavimus, prašome palaikyti 100% tvarką.`,
@@ -156,9 +156,9 @@ const shipEvents = () => {
         `🔧 **Ecce Signum Diagnostics** - Atlikta medicinos skyriaus diagnostika, trūkstamos įrangos ir medikamentų kodas: **#AA-${rNum(10000, 99999)}**`,
         `🔧 **Ecce Signum Diagnostics** - Atlikta medicinos skyriaus diagnostika, trūksta medicininio alkoholio, įtariamas įgulos narys - #0-F24AA`,
         `🔧 **Ecce Signum Diagnostics** - Atlikta medicinos skyriaus diagnostika, rekomenduojama nelaikyti ginklų organų atauginimo kapsulėje`,
-        `🔥 **Ecce Signum Diagnostics** - TO:${person.random()}, **priminimas**: susitvarkyti betvarkę virtuvėje, nesusitvarkius bus atjungta šilto vandens duše privilegija`,
-        `🔥 **Ecce Signum Diagnostics** - TO:${person.random()}, **priminimas**: Jūsų siunta nuo *Žurnalas Kosminiai Bikiniai - naujausias numeris* randasi konteineryje #**${rNum(10000, 20000)}**`,
-        `🔥 **Ecce Signum Diagnostics** - TO:${person.random()}, **priminimas**: Jūsų kambario kodas *kambarys123* nebegalioja, prašome pasikeisti prie artimiausio terminalo.`,
+        `🔥 **Ecce Signum Diagnostics** - TO:**${person.random()}**, **priminimas**: susitvarkyti betvarkę virtuvėje, nesusitvarkius bus atjungta šilto vandens duše privilegija`,
+        `🔥 **Ecce Signum Diagnostics** - TO:**${person.random()}**, **priminimas**: Jūsų siunta nuo *Žurnalas Kosminiai Bikiniai - naujausias numeris* randasi konteineryje #**${rNum(10000, 20000)}**`,
+        `🔥 **Ecce Signum Diagnostics** - TO:**${person.random()}**, **priminimas**: Jūsų kambario kodas *kambarys123* nebegalioja, prašome pasikeisti prie artimiausio terminalo.`,
     ]
 }
 
