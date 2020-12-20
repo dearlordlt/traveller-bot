@@ -390,7 +390,7 @@ const startFeed = (msg, dm, dd) => {
         } else {
             newsFeedRnd = newsFeed.news().random();
         }
-        msg.reply(newsFeedRnd + ` *000-[${intervalIndex}#${ev}]*`)
+        msg.reply(newsFeedRnd + ` *[${intervalIndex}/${ev}]*`)
             .then(ms => {
                 ms.delete({ timeout: 1000 * 60 * dd });
             }).catch(err => {
