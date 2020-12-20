@@ -362,9 +362,10 @@ const parseCommand = (msg) => {
     if (msg.content.startsWith('$news ')) {
         const dm = msg.content.split(' ')[1] || 1;
         const dd = msg.content.split(' ')[2] || 1;
+        const ds = msg.content.split(' ')[3] || 1000;
         intervalIndex = 0;
         msg.react('🆗');
-        startFeed(msg, +dm, +dd);
+        startFeed(msg, +dm, +dd, +ds);
         return;
     }
 }
@@ -376,7 +377,7 @@ Array.prototype.random = function () {
     return this[Math.floor((Math.random() * this.length))];
 }
 
-const startFeed = (msg, dm, dd) => {
+const startFeed = (msg, dm, dd, ds) => {
     if (newsFeedInterval) clearInterval(newsFeedInterval);
     newsFeedInterval = setInterval(() => {
         intervalIndex++;
@@ -395,11 +396,11 @@ const startFeed = (msg, dm, dd) => {
 
         msg.reply(newsFeedRnd + ` *[${intervalIndex}/${ev}]*`)
             .then(ms => {
-                ms.delete({ timeout: 100 * 60 * dd });
+                ms.delete({ timeout: ds * 60 * dd });
             }).catch(err => {
                 console.error(err);
             });
-    }, 100 * 60 * dm);
+    }, ds * 60 * dm);
 }
 
 exports.parseCommand = parseCommand;
