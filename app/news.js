@@ -121,15 +121,24 @@ const person = [
 
 ];
 
+const getAccount = () => {
+    const part1 = `${rNum(1, 9)}${rNum(1, 9)}${rNum(1, 9)}${rNum(1, 9)}`;
+    const part2 = `${rNum(1, 9)}${rNum(1, 9)}${rNum(1, 9)}${rNum(1, 9)}`;
+    const part3 = `${rNum(1, 9)}${rNum(1, 9)}${rNum(1, 9)}${rNum(1, 9)}`;
+    const part4 = `${rNum(1, 9)}${rNum(1, 9)}${rNum(1, 9)}${rNum(1, 9)}`;
+    const part5 = `${rNum(1, 9)}${rNum(1, 9)}${rNum(1, 9)}${rNum(1, 9)}`;
+    return `${part1}-${part2}-${part3}-${part4}-${part5}`;
+}
+
 const whatHappened = () => {
     return [
-        `FROM: ISS/ES - Jūsų kambaryje liko uždarytas katinas, jei nesiimsite veiksmų, katinas išgyvens ${rNum(3, 8)} parų ir sunaikins ${rNum(1, 99)}% Jūsų asmeninių daiktų`,
-        `FROM: GALDIUS Inc: Išpardavimas: Pasinaudok 5% nuolaidos kodu #DD-${rNum(0, 999) + 1000}`,
-        `FROM: Deimo Princas: Deimo princas paliko jums palikimą Cr${rNum(0, 999) * 1000}, perveskite Cr200 į ${rNum(0, 999) + 1000}-${rNum(0, 999) + 1000}-${rNum(0, 999) + 1000}-${rNum(0, 999) + 1000}-${rNum(0, 999) + 1000} saskaitą kad patvirtinti savo asmenybę!`,
-        `FROM: ISS/ES - Jūsų kajutė ${rNum(25, 99)}% sutvarkyta pagal nustatytus reikalavimus, prašome palaikyti 100% tvarką.`,
-        `FROM: Džiugi naujiena: Mitros paslaptys prieinamos visiems, perveskite Cr200 į ${rNum(0, 999) + 1000}-${rNum(0, 999) + 1000}-${rNum(0, 999) + 1000}-${rNum(0, 999) + 1000}-${rNum(0, 999) + 1000} saskaitą kad sužinoti daugiau`,
-        `FROM: LEGIO CXIX: Renka naujus legionierius, pauskite **čia** kad sužinoti daugiau.`,
-        `FROM: Kosminiai Bikiniai: Negavome prenumeratos mokęsčio už praeitus metus, perveskite Cr200 į ${rNum(0, 999) + 1000}-${rNum(0, 999) + 1000}-${rNum(0, 999) + 1000}-${rNum(0, 999) + 1000}-${rNum(0, 999) + 1000} saskaitą kad atnaujinti prenumeratą.`,
+        `FROM: **ISS/ES**: Jūsų kambaryje liko uždarytas katinas, jei nesiimsite veiksmų, katinas išgyvens ${rNum(3, 8)} parų ir sunaikins ${rNum(1, 99)}% Jūsų asmeninių daiktų`,
+        `FROM: **GALDIUS Inc**: Išpardavimas: Pasinaudok 5% nuolaidos kodu #DD-${rNum(0, 999) + 1000}`,
+        `FROM: **Deimo Princas**: Deimo princas paliko jums palikimą Cr${rNum(0, 999) * 1000}, perveskite Cr200 į ${getAccount()} saskaitą kad patvirtinti savo asmenybę!`,
+        `FROM: **ISS/ES** - Jūsų kajutė ${rNum(25, 99)}% sutvarkyta pagal nustatytus reikalavimus, prašome palaikyti 100% tvarką.`,
+        `FROM: **Džiugi naujiena**: Mitros paslaptys prieinamos visiems, perveskite Cr200 į ${getAccount()} saskaitą kad sužinoti daugiau`,
+        `FROM: **LEGIO CXIX**: Renka naujus legionierius, pauskite **čia** kad sužinoti daugiau.`,
+        `FROM: **Kosminiai Bikiniai ( • )( • )**: Negavome prenumeratos mokęsčio už praeitus metus, perveskite Cr200 į ${getAccount()} saskaitą kad atnaujinti prenumeratą.`,
     ]
 };
 
