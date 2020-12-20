@@ -103,32 +103,6 @@ const news = () => {
     ]
 };
 
-const shipEvents = () => {
-    return [
-        `⚠️ **Ecce Signum Diagnostics** - Atlikta Gyvybės palaikymo sistemų diagnostika, tikimybė isgyventi sekantį skrydį - ${rNum(91, 99)},${rNum(0, 99)}%`,
-        `⚠️ **Ecce Signum Diagnostics** - Atlikta Gyvybės palaikymo sistemų diagnostika, tikimybė isgyventi sekantį skrydį -${rNum(91, 99)},${rNum(0, 99)}%`,
-        `⚠️ **Ecce Signum Diagnostics** - Atlikta Gyvybės palaikymo sistemų diagnostika, rekomenduojama nesinaudoti cryo kapsule #${rNum(1, 7)}`,
-        `☢️ **Ecce Signum Diagnostics** - Diagnostika: įgulos nario #0-F24AA alkoholio atsargos pavojuje (Liko ${rNum(0, 100)} alkoholio vienetų), rekomendacija - pasipildyti atsargas`,
-        `☢️ **Ecce Signum Diagnostics** - Diagnostika: įgulos nario #0-F24AA alkoholio atsargos pavojuje (Liko ${rNum(0, 100)} alkoholio vienetų), rekomendacija - pasipildyti atsargas`,
-        `☢️ **Ecce Signum Diagnostics** - Laivo saugumo diagnostika: abordažo atveju laivo įgula netektų ${rNum(70, 100)}% įgulos narių`,
-        `📵 **Ecce Signum Diagnostics** - Laivo sensorių diagnostika: neveikia ${rNum(0, 10)} posistemė/s, prašom susisiekti su sensorių inžinieriumi`,
-        `📵 **Ecce Signum Diagnostics** - Laivo sensorių diagnostika: neveikia ${rNum(0, 10)} posistemė/s, prašom susisiekti su sensorių inžinieriumi`,
-        `📵 **Ecce Signum Diagnostics** - Laivo sensorių diagnostika: sensoriai nerasti, priežastis - ant pulto miegantis katinas, prašom susisiekti su sensorių inžinieriumi`,
-        `🧰 **Ecce Signum Diagnostics** - Atlikta laivo valdymo kalibracija, tikimybė atlikti manevrą padidėjo 0,00${rNum(1, 99)}%`,
-        `🧰 **Ecce Signum Diagnostics** - Atlikta laivo valdymo kalibracija, tikimybė atlikti manevrą sumažėjo 0,00${rNum(1, 99)}%`,
-        `🧰 **Ecce Signum Diagnostics** - Atlikta laivo piloto funkcijų diagnostika, rekomenduojama neatlikinėti sudėtingų manevrų esant dideliam greičiui`,
-        `🧯 **Ecce Signum Diagnostics** - Krovinių skyriuje rasta parazitų, rekomenduojama laikytis higienos ir pamaitinti katiną`,
-        `🧯 **Ecce Signum Diagnostics** - Krovinių skyriuje užstrigo katinas, konteineris #**${rNum(10000, 20000)}**. Skubiai kviečiama įgula`,
-        `🧯 **Ecce Signum Diagnostics** - Krovinių skyriaus diagnostika, rekomenduojama patikrinti konteinerį **#${rNum(10000, 20000)}**. Skubiai kviečiama įgula`,
-        `🔧 **Ecce Signum Diagnostics** - Atlikta medicinos skyriaus diagnostika, trūkstamos įrangos ir medikamentų kodas: **#AA-${rNum(10000, 99999)}**`,
-        `🔧 **Ecce Signum Diagnostics** - Atlikta medicinos skyriaus diagnostika, trūksta medicininio alkoholio, įtariamas įgulos narys - #0-F24AA`,
-        `🔧 **Ecce Signum Diagnostics** - Atlikta medicinos skyriaus diagnostika, rekomenduojama nelaikyti ginklų organų atauginimo kapsulėje`,
-        `🔥 **Ecce Signum Diagnostics** - TO:${person.random()}, **priminimas**: susitvarkyti betvarkę virtuvėje, nesusitvarkius bus atjungta šilto vandens duše privilegija`,
-        `🔥 **Ecce Signum Diagnostics** - TO:${person.random()}, **priminimas**: Jūsų siunta nuo *Žurnalas Kosminiai Bikiniai - naujausias numeris* randasi konteineryje #**${rNum(10000, 20000)}**`,
-        `🔥 **Ecce Signum Diagnostics** - TO:${person.random()}, **priminimas**: Jūsų kambario kodas *kambarys123* nebegalioja, prašome pasikeisti prie artimiausio terminalo.`,
-    ];
-}
-
 const person = [
     `✉️ Brutanus Pictor`,
     `✉️ Evaco Vollia`,
@@ -160,6 +134,32 @@ const whatHappened = () => {
 
 const getPersonalAlert = () => {
     return `TO: **${person.random()}** ${whatHappened().random()}`;
+}
+
+const shipEvents = () => {
+    return [
+        `⚠️ **Ecce Signum Diagnostics** - Atlikta Gyvybės palaikymo sistemų diagnostika, tikimybė isgyventi sekantį skrydį - ${rNum(91, 99)},${rNum(0, 99)}%`,
+        `⚠️ **Ecce Signum Diagnostics** - Atlikta Gyvybės palaikymo sistemų diagnostika, tikimybė isgyventi sekantį skrydį -${rNum(91, 99)},${rNum(0, 99)}%`,
+        `⚠️ **Ecce Signum Diagnostics** - Atlikta Gyvybės palaikymo sistemų diagnostika, rekomenduojama nesinaudoti cryo kapsule #${rNum(1, 7)}`,
+        `☢️ **Ecce Signum Diagnostics** - Diagnostika: įgulos nario #0-F24AA alkoholio atsargos pavojuje (Liko ${rNum(0, 100)} alkoholio vienetų), rekomendacija - pasipildyti atsargas`,
+        `☢️ **Ecce Signum Diagnostics** - Diagnostika: įgulos nario #0-F24AA alkoholio atsargos pavojuje (Liko ${rNum(0, 100)} alkoholio vienetų), rekomendacija - pasipildyti atsargas`,
+        `☢️ **Ecce Signum Diagnostics** - Laivo saugumo diagnostika: abordažo atveju laivo įgula netektų ${rNum(70, 100)}% įgulos narių`,
+        `📵 **Ecce Signum Diagnostics** - Laivo sensorių diagnostika: neveikia ${rNum(0, 10)} posistemė/s, prašom susisiekti su sensorių inžinieriumi`,
+        `📵 **Ecce Signum Diagnostics** - Laivo sensorių diagnostika: neveikia ${rNum(0, 10)} posistemė/s, prašom susisiekti su sensorių inžinieriumi`,
+        `📵 **Ecce Signum Diagnostics** - Laivo sensorių diagnostika: sensoriai nerasti, priežastis - ant pulto miegantis katinas, prašom susisiekti su sensorių inžinieriumi`,
+        `🧰 **Ecce Signum Diagnostics** - Atlikta laivo valdymo kalibracija, tikimybė atlikti manevrą padidėjo 0,00${rNum(1, 99)}%`,
+        `🧰 **Ecce Signum Diagnostics** - Atlikta laivo valdymo kalibracija, tikimybė atlikti manevrą sumažėjo 0,00${rNum(1, 99)}%`,
+        `🧰 **Ecce Signum Diagnostics** - Atlikta laivo piloto funkcijų diagnostika, rekomenduojama neatlikinėti sudėtingų manevrų esant dideliam greičiui`,
+        `🧯 **Ecce Signum Diagnostics** - Krovinių skyriuje rasta parazitų, rekomenduojama laikytis higienos ir pamaitinti katiną`,
+        `🧯 **Ecce Signum Diagnostics** - Krovinių skyriuje užstrigo katinas, konteineris #**${rNum(10000, 20000)}**. Skubiai kviečiama įgula`,
+        `🧯 **Ecce Signum Diagnostics** - Krovinių skyriaus diagnostika, rekomenduojama patikrinti konteinerį **#${rNum(10000, 20000)}**. Skubiai kviečiama įgula`,
+        `🔧 **Ecce Signum Diagnostics** - Atlikta medicinos skyriaus diagnostika, trūkstamos įrangos ir medikamentų kodas: **#AA-${rNum(10000, 99999)}**`,
+        `🔧 **Ecce Signum Diagnostics** - Atlikta medicinos skyriaus diagnostika, trūksta medicininio alkoholio, įtariamas įgulos narys - #0-F24AA`,
+        `🔧 **Ecce Signum Diagnostics** - Atlikta medicinos skyriaus diagnostika, rekomenduojama nelaikyti ginklų organų atauginimo kapsulėje`,
+        `🔥 **Ecce Signum Diagnostics** - TO:${person.random()}, **priminimas**: susitvarkyti betvarkę virtuvėje, nesusitvarkius bus atjungta šilto vandens duše privilegija`,
+        `🔥 **Ecce Signum Diagnostics** - TO:${person.random()}, **priminimas**: Jūsų siunta nuo *Žurnalas Kosminiai Bikiniai - naujausias numeris* randasi konteineryje #**${rNum(10000, 20000)}**`,
+        `🔥 **Ecce Signum Diagnostics** - TO:${person.random()}, **priminimas**: Jūsų kambario kodas *kambarys123* nebegalioja, prašome pasikeisti prie artimiausio terminalo.`,
+    ]
 }
 
 module.exports = {

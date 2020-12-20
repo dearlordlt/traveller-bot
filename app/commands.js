@@ -362,6 +362,7 @@ const parseCommand = (msg) => {
     if (msg.content.startsWith('$news ')) {
         const dm = msg.content.split(' ')[1] || 1;
         const dd = msg.content.split(' ')[2] || 1;
+        intervalIndex = 0;
         msg.react('🆗');
         startFeed(msg, +dm, +dd);
         return;
@@ -376,27 +377,29 @@ Array.prototype.random = function () {
 }
 
 const startFeed = (msg, dm, dd) => {
-    if (newsFeedInterval) clearInterval(newsFeed);
+    if (newsFeedInterval) clearInterval(newsFeedInterval);
     newsFeedInterval = setInterval(() => {
         intervalIndex++;
         let newsFeedRnd = ``;
         let ev = r();
+
         if (ev === 6) {
             newsFeedRnd = newsFeed.getRandomNews();
         } else if (ev === 5) {
             newsFeedRnd = newsFeed.getPersonalAlert();
         } else if (ev === 4 || ev === 3) {
-            newsFeedRnd = newsFeed.shipEvents();
+            newsFeedRnd = newsFeed.shipEvents().random();
         } else {
             newsFeedRnd = newsFeed.news().random();
         }
+
         msg.reply(newsFeedRnd + ` *[${intervalIndex}/${ev}]*`)
             .then(ms => {
-                ms.delete({ timeout: 1000 * 60 * dd });
+                ms.delete({ timeout: 100 * 60 * dd });
             }).catch(err => {
                 console.error(err);
             });
-    }, 1000 * 60 * dm);
+    }, 100 * 60 * dm);
 }
 
 exports.parseCommand = parseCommand;
