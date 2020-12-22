@@ -359,6 +359,11 @@ const parseCommand = (msg) => {
         return;
     }
 
+    if (msg.content.startsWith('$is_running')) {
+        msg.reply(`FEED: ${newsFeedInterval}`);
+        return;
+    }
+
     if (msg.content.startsWith('$news ')) {
         const dm = msg.content.split(' ')[1] || 1;
         const dd = msg.content.split(' ')[2] || 1;
