@@ -113,7 +113,7 @@ const news = () => {
         `📰 **OLYMPUS SCIENCE DAILY** - dr. ${names.getName()} atrado naują egzoplanetą Andromedos galaktikoje, planeta pavadinta 'Ostas II'. *Skaityti daugiau...*`,
         `📰 **OLYMPUS SCIENCE DAILY** - dr. ${names.getName()} paskaičiavo, kad paskutinis įmanomas neužimtas elektroninio pašto adresas bus užimtas prieš baigiant rašyti šitą straipsnį. *Skaityti daugiau...*`,
         `📰 **ENTERTAINMENT NOW** - ${names.getName()} ir jo muzika nuo šios draudžiami ir ${where.random()}. *Skaityti daugiau...*`,
-        `📰 **ENTERTAINMENT NOW** - ${names.getName()} ir${names.getName()} kartu su grupe 'Lotynų Rokas' koncertuos ${where.random()}. *Skaityti daugiau...*`,
+        `📰 **ENTERTAINMENT NOW** - ${names.getName()} ir ${names.getName()} kartu su grupe 'Lotynų Rokas' koncertuos ${where.random()}. *Skaityti daugiau...*`,
         `📰 **ENTERTAINMENT NOW** - ${names.getName()} atsisveikinimo turas 'Žvaigždžių Raketos' ${where.random()} ir ${where.random()} jau kitą mėnesį. *Skaityti daugiau...*`,
     ]
 };
