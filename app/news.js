@@ -152,6 +152,7 @@ const whatHappened = () => {
         `FROM: **RINKIMAI**: Artėja Olimpo Senato Tribūno rinkimai, nežinai už ką balsuoti? Rinkis 'Olimpo plebsų darbo ir tvarkos sąjungos su teisingumu naujųjų respublikonų-liberalų-demokratų už vieningą tautą liaudies ir žmonių partiją'! Sąrašas #LXIX.`,
         `FROM: **${names.getName()}**: Salvė! 12 metų mokyklos baigimo proga, kviečiame tave į klasiokų susitikimą Eos!`,
         `FROM: **${names.getName()}**: Bacho Socialinių Mokslų Institutas atlieka vartotojų įpročių apklausą, pasirinkite vieną: 1) Aš niekada neskaitau laiškų nuo nepažįstamų žmonių, 2) Aš perskaitau visus laiškus iki galo.`,
+        `FROM: **Prefektas: ${names.getName()}** Jūs gavote baudą už greičio viršyjimą ${where.random()}, bauda Cr${rNum(1, 9)}00, susimokėkite arčiausiame uoste.`
     ]
 };
 
