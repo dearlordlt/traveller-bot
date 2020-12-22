@@ -108,7 +108,7 @@ const news = () => {
         `📰 **SPORTS 24** - Eos 'Argonautai' vs Zeus 'Jaučiai' ${rNum(0, 20)} : ${rNum(0, 20)}, naudingiausias žaidėjas - ${names.getName()}`,
         `📰 **SPORTS 24** - Romulo 'Remai' vs Remulo 'Romai' ${rNum(0, 20)} : ${rNum(0, 20)}, naudingiausias žaidėjas - ${names.getName()}`,
         `📰 **SPORTS 24** - Naudingiausiu metų žaidėju ištinktas ${names.getName()}, metų gladiatorius: ${names.getName()}, didžiausias sporto nusivylimas: ${names.getName()}`,
-        `📰 **OLYMPUS SCIENCE DAILY** - Žmonių klonavimas - amoralus mokslas ar neišvengiama būtinybė? ${names.getName()}. *Skaityti daugiau...*`,
+        `📰 **OLYMPUS SCIENCE DAILY** - Žmonių klonavimas - amoralus mokslas ar neišvengiama būtinybė? prof. hab. dr. emeritus - ${names.getName()}. *Skaityti daugiau...*`,
         `📰 **OLYMPUS SCIENCE DAILY** - Žmonių neigiančių kitų planetų egzistavimą skaičius siekia ${rNum(10, 20)}%, pasitikrink ar nesi vienas iš jų. *Skaityti daugiau...*`,
         `📰 **OLYMPUS SCIENCE DAILY** - dr. ${names.getName()} atrado naują egzoplanetą Andromedos galaktikoje, planeta pavadinta 'Ostas II'. *Skaityti daugiau...*`,
         `📰 **OLYMPUS SCIENCE DAILY** - dr. ${names.getName()} paskaičiavo, kad paskutinis įmanomas neužimtas elektroninio pašto adresas bus užimtas prieš baigiant rašyti šitą straipsnį. *Skaityti daugiau...*`,
