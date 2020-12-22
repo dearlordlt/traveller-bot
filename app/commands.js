@@ -360,7 +360,7 @@ const parseCommand = (msg) => {
     }
 
     if (msg.content.startsWith('$is_running')) {
-        msg.reply(`FEED: ${newsFeedInterval}`);
+        msg.reply(`FEED ID: ${newsFeedInterval}, QUEUE: ${intervalIndex}`);
         return;
     }
 
