@@ -35,15 +35,18 @@ const where = [
 
 const what = () => {
     return [
-        `medienos kainos nukrito ${rNum(1, 20)},${rNum(0, 100)}%`,
+        `medienos kainos ${rNum(1, 2) === 1 ? 'kilo' : 'krito'} ${rNum(1, 20)},${rNum(0, 100)}%`,
         `skelbiama visuotinė mobilizacija`,
-        `vergų kainos pakilo ${rNum(1, 20)},${rNum(0, 100)}%`,
+        `vergų kainos ${rNum(1, 2) === 1 ? 'kilo' : 'krito'} ${rNum(1, 20)},${rNum(0, 100)}%`,
         `sutriko bankinės sistemos`,
         `vyksta neeilinė senato sesija`,
         `įvesta komendanto valanda`,
         `skelbiamos gladiatorių žaidynės`,
         `įvestas embargo ginklams`,
-        `sunkiųjų metalų kainos krito ${rNum(1, 20)},${rNum(0, 100)}%`,
+        `sunkiųjų metalų kainos ${rNum(1, 2) === 1 ? 'kilo' : 'krito'} ${rNum(1, 20)},${rNum(0, 100)}%`,
+        `nuo šiol draudžiama vadinti naujagimius vardais prasidedančiais 'D' raide`,
+        `šaudmenų kainos ${rNum(1, 2) === 1 ? 'kilo' : 'krito'} ${rNum(1, 20)},${rNum(0, 100)}%`,
+        `elektronikos prekių kainos ${rNum(1, 2) === 1 ? 'kilo' : 'krito'} ${rNum(1, 20)},${rNum(0, 100)}%`,
     ]
 };
 
@@ -59,6 +62,7 @@ const why = [
     `dėl sunkios ekonominės situacijos`,
     `dėl piratų antpuolių`,
     `dėl nutraukto serialo 'Legijonierių žmonos' XIX sezono`,
+    `dėl Deimo Princo mirties`,
 ];
 
 const getRandomNews = () => {
@@ -107,6 +111,7 @@ const news = () => {
         `📰 **OLYMPUS SCIENCE DAILY** - Žmonių klonavimas - amoralus mokslas ar neišvengiama būtinybė? ${names.getName()}. *Skaityti daugiau...*`,
         `📰 **OLYMPUS SCIENCE DAILY** - Žmonių neigiančių kitų planetų egzistavimą skaičius siekia ${rNum(10, 20)}%, pasitikrink ar nesi vienas iš jų. *Skaityti daugiau...*`,
         `📰 **OLYMPUS SCIENCE DAILY** - dr. ${names.getName()} atrado naują egzoplanetą Andromedos galaktikoje, planeta pavadinta 'Ostas II'. *Skaityti daugiau...*`,
+        `📰 **OLYMPUS SCIENCE DAILY** - dr. ${names.getName()} paskaičiavo, kad paskutinis įmanomas neužimtas elektroninio pašto adresas bus užimtas prieš baigiant rašyti šitą straipsnį. *Skaityti daugiau...*`,
     ]
 };
 
