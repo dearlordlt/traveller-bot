@@ -182,7 +182,7 @@ const shipEvents = () => {
         `🔥 **Ecce Signum** - 📧 TO:**${person.random()}**, **priminimas**: susitvarkyti betvarkę virtuvėje, nesusitvarkius bus atjungta šilto vandens duše privilegija`,
         `🔥 **Ecce Signum** - 📧 TO:**${person.random()}**, **priminimas**: Jūsų siunta nuo *Žurnalas Kosminiai Bikiniai - naujausias numeris* randasi konteineryje #**${rNum(10000, 20000)}**`,
         `🔥 **Ecce Signum** - 📧 TO:**${person.random()}**, **priminimas**: Jūsų kambario kodas *kambarys123* nebegalioja, prašome pasikeisti prie artimiausio terminalo.`,
-        `🔥 **Ecce Signum** - 📧 TO:**${person.random()}**, **priminimas**: Jūsų 'SPAM' aplankas užima ${rNum(20, 60)} viso laivo turimų laikmenų, prašome skubiai išsitrinti nereikalingas žinutes.`,
+        `🔥 **Ecce Signum** - 📧 TO:**${person.random()}**, **priminimas**: Jūsų 'SPAM' aplankas užima ${rNum(20, 60)}% viso laivo turimų laikmenų, prašome skubiai išsitrinti nereikalingas žinutes.`,
         `🔥 **Ecce Signum** - 📧 TO:**${person.random()}**, **priminimas**: Ventiliacijos šachtoje #${rNum(100, 999)} rastas Jūsų batas, įtariamas katinas arba ${person.random()}.`,
     ]
 }
