@@ -204,14 +204,45 @@ const parseCommand = (msg) => {
 
         const dm = msg.content.split(' ')[1] || 0;
 
-        if (parseInt(dm) || dm === 0) {
+        let content = msg.content;
+        let diff = 0;
+        let successLevel = false;
+
+        if (msg.content.includes('  ')) {
+            msg.react('⛔');
+            msg.reply(`⛔ Warning ⚠️ **Dima** detected, please use normal syntax.`);
+            msg.react('💳');
+            msg.react('⚠️');
+            msg.reply(`💳 Imperial law strictly forbids **Dima**'s syntax`);
+            msg.reply(`💳 You received a fine - **Cr100**`);
+            msg.reply(`💳 Please pay in nearest spaceport`);
+            content = msg.content.replace(/\s\s+/g, ' ');
+        }
+
+        if (content.includes('/')) {
+            const val = content.match(/[^/]+$/);
+            diff = parseInt(val[0]);
+        }
+
+        if (parseInt(dm) || +dm === 0) {
             msg.react('🎲');
             const roll = [r(), r(), r()];
             roll.sort();
             const shifted = msg.content.startsWith('$boon') ? [roll[1], roll[2]] : [roll[0], roll[1]];
             const sumBoon = parseInt(dm) + sum(shifted);
 
-            msg.reply(`🎲 [${roll}]${dm ? '+' + dm : ''}=**${sumBoon}**`);
+            if (sumBoon - diff <= -6) successLevel = 'Exceptional Failure';
+            else if (sumBoon - diff <= -2) successLevel = 'Average Failure';
+            else if (sumBoon - diff === -1) successLevel = 'Marginal Failure';
+            else if (sumBoon - diff === 0) successLevel = 'Marginal Success';
+            else if (sumBoon - diff <= 5) successLevel = 'Average Success';
+            else if (sumBoon - diff >= 6) successLevel = 'Exceptional Success';
+
+            const isSuccessStr = sumBoon >= diff
+                ? `[${sumBoon} >= ${diff}] **${successLevel} (${sumBoon - diff})** 🤑`
+                : `[${sumBoon} >= ${diff}] **${successLevel} (${sumBoon - diff})** ☠️`;
+
+            msg.reply(`🎲 [${roll}]${dm ? '+' + dm : ''}=**${sumBoon}** ${isSuccessStr}`);
         } else {
             msg.react('⛔');
         }
