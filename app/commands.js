@@ -36,8 +36,8 @@ const parseCommand = (msg) => {
         🪐 **$r2** - *roll 2d*
         🪐 **$r66** - *roll d66*
         🪐 **$char** - *generates characteristics*
-        🪐 **$boon x** - *$boon x (x optional modifier)*
-        🪐 **$bane x** - *$bane x (x optional modifier)*
+        🪐 **$boon x /y** - *$boon x (x optional modifier) /y (optional difficulty)*
+        🪐 **$bane x /y** - *$bane x (x optional modifier) /y (optional difficulty)*
         🪐 **$dm** - *list characteristics*
         🪐 **$dm x** - *$dm_x (x characteristic)*
         🪐 **$jump x** - *$jump_x (x DM), DM-2 for unrefined fuel, DM-4 for 100 diameter limit*
@@ -242,7 +242,7 @@ const parseCommand = (msg) => {
                 ? `[${sumBoon} >= ${diff}] **${successLevel} (${sumBoon - diff})** 🤑`
                 : `[${sumBoon} >= ${diff}] **${successLevel} (${sumBoon - diff})** ☠️`;
 
-            msg.reply(`🎲 [${roll}]${dm ? '+' + dm : ''}=**${sumBoon}** ${isSuccessStr}`);
+            msg.reply(`🎲 [${roll}]${dm ? '+' + dm : ''}=**${sumBoon}** ${diff ? isSuccessStr : ''}`);
         } else {
             msg.react('⛔');
         }
