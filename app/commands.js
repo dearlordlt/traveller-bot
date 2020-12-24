@@ -46,6 +46,9 @@ const parseCommand = (msg) => {
         🪐 **$npc x** - *random npc (x optional, number, max 12)*
         🪐 **$names x** - *random names (x optional, number, max 50)*
         🪐 **$planet x** - *random planet (x optional, planet code: a.e. D3C6XX1)*
+        🪐 **$news x y z** - *starts news feed: x:msg at time, y:to keep in chat, z: ms interval, a.e. $news 1 5 5000*
+        🪐 **$stop** - *stops news feed*
+        🪐 **$is_running** - *shows news feed status*
         `);
         return;
     }
@@ -391,7 +394,7 @@ const parseCommand = (msg) => {
     }
 
     if (msg.content.startsWith('$is_running')) {
-        msg.reply(`FEED ID: ${newsFeedInterval}, QUEUE: ${intervalIndex}`);
+        msg.reply(`FEED ID: ${newsFeedInterval ? newsFeedInterval : 'stopped'}, QUEUE: ${intervalIndex}`);
         return;
     }
 
