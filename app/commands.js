@@ -420,7 +420,7 @@ const parseCommand = (msg) => {
 
         const enemiesArr = [...Array(+enemies).keys()]
 
-        enemiesArr.array.forEach(() => {
+        enemiesArr.forEach(() => {
             table.addRow(`Enemy`, `X`, '', '', '', '', '', '');
         });
 
