@@ -411,7 +411,8 @@ const parseCommand = (msg) => {
 
     if (msg.content.startsWith('$space ')) {
         const content = msg.content.replace(/\s\s+/g, ' ');
-        const enemies = content.split(' ')[1] || 1;
+        const enemies = +content.split(' ')[1] || 1;
+        const thrust = +content.split(' ')[2] || 3;
 
         const table = new AsciiTable('Space Combat');
 
@@ -421,7 +422,7 @@ const parseCommand = (msg) => {
         const enemiesArr = [...Array(+enemies).keys()]
 
         enemiesArr.forEach(() => {
-            table.addRow(`Enemy`, `X`, '', '', '', '', '', '');
+            table.addRow(`Enemy => ${thrust}`, `X`, '', '', '', '', '', '');
         });
 
         msg.react(`🎯`);
