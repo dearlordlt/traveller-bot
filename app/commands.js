@@ -418,7 +418,7 @@ const parseCommand = (msg) => {
         table.setHeading('', 'Dist', 'V. Long', 'Long', 'Med', 'Short', 'Close', 'Adj');
         table.addRow('Thrust', 50, 25, 10, 5, 2, 1, 1);
 
-        const enemiesArr = Array.apply(null, Array(+enemies)).map(() => 'Enemy');
+        const enemiesArr = AsciiTable.arrayFill(+enemies, 0)
 
         enemiesArr.array.forEach(() => {
             table.addRow(`Enemy`, `X`, '', '', '', '', '', '');
