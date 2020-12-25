@@ -422,8 +422,8 @@ const parseCommand = (msg) => {
         });
 
         msg.react(`🎯`);
-        msg.reply(`${enemies}`);
-        msg.reply(`${table.toString()}`);
+        msg.reply(`
+${table.toString()}`);
     }
 }
 
