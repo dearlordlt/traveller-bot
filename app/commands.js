@@ -422,7 +422,7 @@ const parseCommand = (msg) => {
         });
 
         msg.react(`🎯`);
-        msg.reply(```${table.toString()}```);
+        msg.reply('```' + table.toString() + ```');
     }
 }
 
@@ -450,7 +450,7 @@ const startFeed = (msg, dm, dd, ds) => {
             newsFeedRnd = newsFeed.news().random();
         }
 
-        msg.reply(newsFeedRnd + ` *[${intervalIndex}/${ev}]*`)
+        msg.reply(newsFeedRnd + ` * [${ intervalIndex } / ${ ev }] * `)
             .then(ms => {
                 ms.delete({ timeout: ds * 60 * dd });
             }).catch(err => {
