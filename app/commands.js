@@ -422,8 +422,7 @@ const parseCommand = (msg) => {
         });
 
         msg.react(`🎯`);
-        msg.reply(`
-${table.toString()}`);
+        msg.reply(```${table.toString()}```);
     }
 }
 
