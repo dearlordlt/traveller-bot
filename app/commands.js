@@ -417,8 +417,11 @@ const parseCommand = (msg) => {
 
         table.setHeading('', 'Dist', 'V. Long', 'Long', 'Med', 'Short', 'Close', 'Adj');
         table.addRow('Thrust', 50, 25, 10, 5, 2, 1, 1);
-        Array.apply(null, Array(enemies)).forEach((el, rowIndex) => {
-            table.addRow(`Enemy ${rowIndex + 1}`, `X`, '', '', '', '', '', '');
+        // eslint-disable-next-line no-unused-vars
+        const enemiesArr = Array.apply(null, Array(+enemies)).map(el => el = 'Enemy');
+
+        enemiesArr.array.forEach(element => {
+            table.addRow(`${element}`, `X`, '', '', '', '', '', '');
         });
 
         msg.react(`🎯`);
