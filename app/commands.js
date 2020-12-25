@@ -409,26 +409,44 @@ const parseCommand = (msg) => {
         return;
     }
 
-    if (msg.content.startsWith('$space ')) {
+    if (msg.content.startsWith('$space_start ')) {
         const content = msg.content.replace(/\s\s+/g, ' ');
-        const enemies = +content.split(' ')[1] || 1;
+        spaceEnemies = +content.split(' ')[1] || 1;
         const thrust = +content.split(' ')[2] || 3;
 
-        const table = new AsciiTable('Space Combat');
+        initTable();
 
-        table.setHeading('', 'Dist', 'V. Long', 'Long', 'Med', 'Short', 'Close', 'Adj');
-        table.addRow('Thrust', 50, 25, 10, 5, 2, 1, 1);
-
-        const enemiesArr = [...Array(+enemies).keys()]
+        const enemiesArr = [...Array(+spaceEnemies).keys()]
 
         enemiesArr.forEach(() => {
-            table.addRow(`Enemy => ${thrust}`, `X`, '', '', '', '', '', '');
+            spaceTable.addRow(`Enemy => ${thrust}`, `X`, '', '', '', '', '', '');
         });
 
         msg.react(`🎯`);
-        msg.reply('```' + table.toString() + '```');
+        msg.reply('```' + spaceTable.toString() + '```');
+    }
+
+    if (msg.content.startsWith('$space_move ')) {
+        return;
+    }
+
+    if (msg.content.startsWith('$move_ship ')) {
+        return;
     }
 }
+
+/* SPACE */
+let spaceTable;
+let spaceEnemies = 0;
+
+const initTable = () => {
+    spaceTable = new AsciiTable('Space Combat');
+
+    spaceTable.setHeading('', 'Dist', 'V. Long', 'Long', 'Med', 'Short', 'Close', 'Adj');
+    spaceTable.addRow('Thrust', 50, 25, 10, 5, 2, 1, 1);
+}
+
+/* NEWS */
 
 let newsFeedInterval;
 let intervalIndex = 0;
