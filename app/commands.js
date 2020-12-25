@@ -3,6 +3,7 @@ const randomNames = require('./names');
 const planet = require('./planet');
 const util = require('./util');
 const newsFeed = require('./news');
+const AsciiTable = require('ascii-table')
 
 const r = (sides = 6) => (Math.ceil(Math.random() * sides));
 
@@ -412,8 +413,17 @@ const parseCommand = (msg) => {
         const content = msg.content.replace(/\s\s+/g, ' ');
         const enemies = content.split(' ')[1] || 1;
 
+        const table = new AsciiTable('Space Combat');
+
+        table.setHeading('', 'Distant', 'Very Long', 'Long', 'Medium', 'Short', 'Close', 'Adjacent');
+        table.addRow('Thrust', 50, 25, 10, 5, 2, 1, 1);
+        Array.apply(null, Array(enemies)).forEach((el, rowIndex) => {
+            table.addRow(`Enemy ${rowIndex + 1}`, `X`, '', '', '', '', '', '');
+        });
+
         msg.react(`🎯`);
         msg.reply(`${enemies}`);
+        msg.reply(`${table.toString()}`);
     }
 }
 
