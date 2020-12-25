@@ -407,6 +407,14 @@ const parseCommand = (msg) => {
         startFeed(msg, +dm, +dd, +ds);
         return;
     }
+
+    if (msg.content.startsWith('$space ')) {
+        const content = msg.content.replace(/\s\s+/g, ' ');
+        const enemies = content.split(' ')[1] || 1;
+
+        msg.react(`🎯`);
+        msg.reply(`${enemies}`);
+    }
 }
 
 let newsFeedInterval;
