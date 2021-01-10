@@ -112,12 +112,12 @@ const news = () => {
         `📰 **OLYMPUS SCIENCE DAILY** - Žmonių neigiančių kitų planetų egzistavimą skaičius siekia ${rNum(10, 20)}%, pasitikrink ar nesi vienas iš jų. *Skaityti daugiau...*`,
         `📰 **OLYMPUS SCIENCE DAILY** - dr. ${names.getName()} atrado naują egzoplanetą Andromedos galaktikoje, planeta pavadinta 'Ostas II'. *Skaityti daugiau...*`,
         `📰 **OLYMPUS SCIENCE DAILY** - dr. ${names.getName()} paskaičiavo, kad paskutinis įmanomas neužimtas elektroninio pašto adresas bus užimtas prieš baigiant rašyti šitą straipsnį. *Skaityti daugiau...*`,
-        `📰 **ENTERTAINMENT NOW** - ${names.getName()} ir jo muzika nuo šios draudžiami ir ${where.random()}. *Skaityti daugiau...*`,
+        `📰 **ENTERTAINMENT NOW** - ${names.getName()} ir jo muzika nuo šiol draudžiami ir ${where.random()}. *Skaityti daugiau...*`,
         `📰 **ENTERTAINMENT NOW** - ${names.getName()} ir ${names.getName()} kartu su grupe 'Lotynų Rokas' koncertuos ${where.random()}. *Skaityti daugiau...*`,
         `📰 **ENTERTAINMENT NOW** - ${names.getName()} atsisveikinimo turas 'Žvaigždžių Raketos' ${where.random()} ir ${where.random()} jau kitą mėnesį. *Skaityti daugiau...*`,
-        `📰 **DEIMOS TODAY** - Virgo sistemoje, po ginkluoto pasipriešinimo, Deimo spec. pajėgos suleikė du imperijos šnipus: Krato Enėją ir Tuliju Septą. Abu nuteisti karo tribunolo ir sušaudyti vietoje. *Skaityti daugiau...*`,
-        `📰 **DEIMOS TODAY** - Virgo sistemoje, po ginkluoto pasipriešinimo, Deimo spec. pajėgos suleikė du imperijos šnipus: Krato Enėją ir Tuliju Septą. Abu nuteisti karo tribunolo ir sušaudyti vietoje. *Skaityti daugiau...*`,
-        `📰 **DEIMOS TODAY** - Virgo sistemoje, po ginkluoto pasipriešinimo, Deimo spec. pajėgos suleikė du imperijos šnipus: Krato Enėją ir Tuliju Septą. Abu nuteisti karo tribunolo ir sušaudyti vietoje. *Skaityti daugiau...*`,
+        `📰 **DEIMOS TODAY** - Virgo sistemoje, po ginkluoto pasipriešinimo, Deimo spec. pajėgos sulaikė du imperijos šnipus: Krato Enėją ir Tuliju Septą. Abu nuteisti karo tribunolo ir sušaudyti vietoje. *Skaityti daugiau...*`,
+        `📰 **DEIMOS TODAY** - Virgo sistemoje, po ginkluoto pasipriešinimo, Deimo spec. pajėgos sulaikė du imperijos šnipus: Krato Enėją ir Tuliju Septą. Abu nuteisti karo tribunolo ir sušaudyti vietoje. *Skaityti daugiau...*`,
+        `📰 **DEIMOS TODAY** - Virgo sistemoje, po ginkluoto pasipriešinimo, Deimo spec. pajėgos sulaikė du imperijos šnipus: Krato Enėją ir Tuliju Septą. Abu nuteisti karo tribunolo ir sušaudyti vietoje. *Skaityti daugiau...*`,
     ]
 };
 
