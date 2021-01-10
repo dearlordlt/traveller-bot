@@ -1,5 +1,6 @@
 const SI_POSTFIXES = ["", "Thousand", "Million", "Billion", "Trillion", "Quadrillion", "Quintillion"];
 
+// copied from interwebs so must work .. right ?
 const bigNumber = (number) => {
 
     // what tier? (determines SI prefix)
