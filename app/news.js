@@ -115,6 +115,9 @@ const news = () => {
         `📰 **ENTERTAINMENT NOW** - ${names.getName()} ir jo muzika nuo šios draudžiami ir ${where.random()}. *Skaityti daugiau...*`,
         `📰 **ENTERTAINMENT NOW** - ${names.getName()} ir ${names.getName()} kartu su grupe 'Lotynų Rokas' koncertuos ${where.random()}. *Skaityti daugiau...*`,
         `📰 **ENTERTAINMENT NOW** - ${names.getName()} atsisveikinimo turas 'Žvaigždžių Raketos' ${where.random()} ir ${where.random()} jau kitą mėnesį. *Skaityti daugiau...*`,
+        `📰 **DEIMOS TODAY** - Virgo sistemoje, po ginkluoto pasipriešinimo, Deimo spec. pajėgos suleikė du imperijos šnipus: Krato Enėją ir Tuliju Septą. Abu nuteisti karo tribunolo ir sušaudyti vietoje. *Skaityti daugiau...*`,
+        `📰 **DEIMOS TODAY** - Virgo sistemoje, po ginkluoto pasipriešinimo, Deimo spec. pajėgos suleikė du imperijos šnipus: Krato Enėją ir Tuliju Septą. Abu nuteisti karo tribunolo ir sušaudyti vietoje. *Skaityti daugiau...*`,
+        `📰 **DEIMOS TODAY** - Virgo sistemoje, po ginkluoto pasipriešinimo, Deimo spec. pajėgos suleikė du imperijos šnipus: Krato Enėją ir Tuliju Septą. Abu nuteisti karo tribunolo ir sušaudyti vietoje. *Skaityti daugiau...*`,
     ]
 };
 
