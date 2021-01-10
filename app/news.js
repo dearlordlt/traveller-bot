@@ -187,6 +187,12 @@ const shipEvents = () => {
     ]
 }
 
+/**
+ * TODO:
+ * random band names
+ * random song names
+ */
+
 module.exports = {
     news,
     getRandomNews,
