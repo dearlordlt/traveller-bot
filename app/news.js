@@ -167,7 +167,7 @@ const shipEvents = () => {
     return [
         `⚠️ ** Ecce Signum Diagnostics ** - Visos sistemos sugadintos, gyvybės palaikymas atjungtas, 7 neidentifikuoti asmenys artėja prie kapitono tiltelio. Susinaikinimas po 3 ... 2 ... 1 ...`,
         `⚠️ ** Ecce Signum Diagnostics ** - .. neatpažintas objektas (#PHB-5010530315) sunaikino RSS - Tornado, RSS Ciklonas sugadintas. NO nekeičia kurso, gynybos sistemos užrakintos, rekomenduojama evakuacija.`,
-        `⚠️ ** Ecce Signum Diagnostics ** - Paskutinė žinutė prieš susinaikinimą: TO:**Ecce Signum įgula**, Salve broliai! Manes laukia paskutinis mūšis. Po savęs palieku savo draugams ir broliams savo paskutinį palikimą - jį surasite {koordinatės}. Jums ten padės patekti mano draugas? Ardanas. Suraskite ji Virgo bazėje. Pasirūpinkite Tara ir Cezariu. Semper Fi!`,
+        `⚠️ ** Ecce Signum ** - Paskutinė žinutė prieš susinaikinimą: TO:**Ecce Signum įgula**, Salve broliai! Manes laukia paskutinis mūšis. Po savęs palieku savo draugams ir broliams savo paskutinį palikimą - jį rasite {koordinatės}. Jums ten patekti padės mano draugas? Ardanas. Suraskite ji Virgo bazėje. Pasirūpinkite Tara ir Cezariu. Semper Fi ir iki susimatymo Eliziejaus Laukuose!`,
     ];
     /* return [
         `⚠️ **Ecce Signum Diagnostics** - Atlikta Gyvybės palaikymo sistemų diagnostika, tikimybė isgyventi sekantį skrydį - ${rNum(91, 99)},${rNum(0, 99)}%`,
