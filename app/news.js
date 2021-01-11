@@ -145,7 +145,7 @@ const whatHappened = () => {
         `FROM: **Deimo Princo Advokatas**: Deimo princas paliko jums palikimą - Cr${rNum(0, 999) * rNum(999, 9999)}, perveskite Cr200 į ${getAccount()} saskaitą kad patvirtinti savo asmenybę!`,
         `FROM: **ISS/ES** - Jūsų kajutė ${rNum(25, 99)}% sutvarkyta pagal nustatytus reikalavimus, prašome palaikyti 100% tvarką.`,
         `FROM: **Džiugi naujiena**: Mitros paslaptys prieinamos visiems, perveskite Cr200 į ${getAccount()} saskaitą kad sužinoti daugiau`,
-        `FROM: **LEGIO CXIX**: Renka naujus legionierius, pauskite **čia** kad sužinoti daugiau.`,
+        `FROM: **LEGIO CXIX**: Renka naujus legionierius, spauskite **čia** kad sužinoti daugiau.`,
         `FROM: **Kosminiai Bikiniai ( • )( • )**: Negavome prenumeratos mokęsčio už praeitus metus, perveskite Cr200 į ${getAccount()} saskaitą kad atnaujinti prenumeratą.`,
         `FROM: **Septima LXIX**: Nori pamatyti mano nuotaukas ❤️❤️❤️ Spausk **Čia**.`,
         `FROM: **Bacho Bažnyčia**: Didžiausias alkoholio pasirinkimas Aurėjoje 🥂. Spausk **Čia**.`,
