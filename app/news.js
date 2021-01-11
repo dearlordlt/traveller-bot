@@ -115,9 +115,9 @@ const news = () => {
         `📰 **ENTERTAINMENT NOW** - ${names.getName()} ir jo muzika nuo šiol draudžiami ir ${where.random()}. *Skaityti daugiau...*`,
         `📰 **ENTERTAINMENT NOW** - ${names.getName()} ir ${names.getName()} kartu su grupe 'Lotynų Rokas' koncertuos ${where.random()}. *Skaityti daugiau...*`,
         `📰 **ENTERTAINMENT NOW** - ${names.getName()} atsisveikinimo turas 'Žvaigždžių Raketos' ${where.random()} ir ${where.random()} jau kitą mėnesį. *Skaityti daugiau...*`,
-        `📰 **DEIMOS TODAY** - Virgo sistemoje, po ginkluoto pasipriešinimo, Deimo spec. pajėgos sulaikė du imperijos šnipus: Krato Enėją ir Tuliju Septą. Abu nuteisti karo tribunolo ir sušaudyti vietoje. *Skaityti daugiau...*`,
-        `📰 **DEIMOS TODAY** - Virgo sistemoje, po ginkluoto pasipriešinimo, Deimo spec. pajėgos sulaikė du imperijos šnipus: Krato Enėją ir Tuliju Septą. Abu nuteisti karo tribunolo ir sušaudyti vietoje. *Skaityti daugiau...*`,
-        `📰 **DEIMOS TODAY** - Virgo sistemoje, po ginkluoto pasipriešinimo, Deimo spec. pajėgos sulaikė du imperijos šnipus: Krato Enėją ir Tuliju Septą. Abu nuteisti karo tribunolo ir sušaudyti vietoje. *Skaityti daugiau...*`,
+        `📰 **DEIMOS TODAY** - Virgo sistemoje, po ginkluoto pasipriešinimo, Deimo spec. pajėgos sulaikė du imperijos šnipus: Krato Enėją ir Tuliju Septą. Likę šnipai sunaikinti kovos metu. Abu nuteisti karo tribunolo ir sušaudyti vietoje. *Skaityti daugiau...*`,
+        `📰 **DEIMOS TODAY** - Virgo sistemoje, po ginkluoto pasipriešinimo, Deimo spec. pajėgos sulaikė du imperijos šnipus: Krato Enėją ir Tuliju Septą. Likę šnipai pabėgo. Abu nuteisti karo tribunolo ir sušaudyti vietoje. *Skaityti daugiau...*`,
+        `📰 **DEIMOS TODAY** - Virgo sistemoje, po ginkluoto pasipriešinimo, Deimo spec. pajėgos sulaikė du imperijos šnipus: Krato Enėją ir Tuliju Septą. Likė šnipai slapstosi Virgo sistemoję. Abu nuteisti karo tribunolo ir sušaudyti vietoje. *Skaityti daugiau...*`,
     ]
 };
 
@@ -150,7 +150,7 @@ const whatHappened = () => {
         `FROM: **Septima LXIX**: Nori pamatyti mano nuotaukas ❤️❤️❤️ Spausk **Čia**.`,
         `FROM: **Bacho Bažnyčia**: Didžiausias alkoholio pasirinkimas Aurėjoje 🥂. Spausk **Čia**.`,
         `FROM: **Fortuna Inc**: Lengvas būdas užsidirbti Cr10000/mėn, darbas iš namų vos 2h per dieną, nori sužinoti daugiau? Spausk **Čia**..`,
-        `FROM: **Ecce Signum Systems**: Primninimas: esant uoste nupirkti ${rNum(1, 5)}Kg miltų,  ${rNum(1, 5)}Kg mėsos,  ${rNum(20, 40)}Vnt. kiaušinių  ${rNum(1, 5)}Kg maisto katinui ir daržovių savo nuožiūra. *<SET REMINDER>*`,
+        // `FROM: **Ecce Signum Systems**: Primninimas: esant uoste nupirkti ${rNum(1, 5)}Kg miltų,  ${rNum(1, 5)}Kg mėsos,  ${rNum(20, 40)}Vnt. kiaušinių  ${rNum(1, 5)}Kg maisto katinui ir daržovių savo nuožiūra. *<SET REMINDER>*`,
         `FROM: **Olympus Imperial Bank**: Pastebėta įtartina transakcija iš Jūsū sąskaitos 'Cr200, Gavėjas - *Deimo Princo Advokatas*'. Jei Jūs neatlikote šio pavedimo, krepkitės į artimiausią mūsų skyrių.`,
         `FROM: **RINKIMAI**: Artėja Olimpo Senato Tribūno rinkimai, nežinai už ką balsuoti? Rinkis 'Olimpo plebsų darbo ir tvarkos sąjungos su teisingumu naujųjų respublikonų-liberalų-demokratų už vieningą tautą liaudies ir žmonių partiją'! Sąrašas #LXIX.`,
         `FROM: **${names.getName()}**: Salvė! 12 metų mokyklos baigimo proga, kviečiame tave į klasiokų susitikimą Eos!`,
@@ -165,6 +165,11 @@ const getPersonalAlert = () => {
 
 const shipEvents = () => {
     return [
+        `⚠️ ** Ecce Signum Diagnostics ** - Visos sistemos sugadintos, gyvybės palaikymas atjungtas, 7 neidentifikuoti asmenys artėja prie kapitono tiltelio. Susinaikinimas po 3 ... 2 ... 1 ...`,
+        `⚠️ ** Ecce Signum Diagnostics ** - .. neatpažintas objektas (#PHB-5010530315) sunaikino RSS - Tornado, RSS Ciklonas sugadintas. NO nekeičia kurso, gynybos sistemos užrakintos, rekomenduojama evakuacija.`,
+        `⚠️ ** Ecce Signum Diagnostics ** - Paskutinė žinutė prieš susinaikinimą: TO:**Ecce Signum įgula**, Salve broliai! Manes laukia paskutinis mūšis. Po savęs palieku savo draugams ir broliams savo paskutinį palikimą - jį surasite {koordinatės}. Jums ten padės patekti mano draugas? Ardanas. Suraskite ji Virgo bazėje. Pasirūpinkite Tara ir Cezariu. Semper Fi!`,
+    ];
+    /* return [
         `⚠️ **Ecce Signum Diagnostics** - Atlikta Gyvybės palaikymo sistemų diagnostika, tikimybė isgyventi sekantį skrydį - ${rNum(91, 99)},${rNum(0, 99)}%`,
         `⚠️ **Ecce Signum Diagnostics** - Atlikta Gyvybės palaikymo sistemų diagnostika, rekomenduojama nesinaudoti cryo kapsule #${rNum(1, 7)}`,
         `☢️ **Ecce Signum Diagnostics** - Diagnostika: įgulos nario #0-F24AA alkoholio atsargos pavojuje (Liko ${rNum(0, 100)} alkoholio vienetų), rekomendacija - pasipildyti atsargas`,
@@ -187,7 +192,7 @@ const shipEvents = () => {
         `🔥 **Ecce Signum** - 📧 TO:**${person.random()}**, **priminimas**: Jūsų kambario kodas *kambarys123* nebegalioja, prašome pasikeisti prie artimiausio terminalo.`,
         `🔥 **Ecce Signum** - 📧 TO:**${person.random()}**, **priminimas**: Jūsų 'SPAM' aplankas užima ${rNum(20, 60)}% viso laivo turimų laikmenų, prašome skubiai išsitrinti nereikalingas žinutes.`,
         `🔥 **Ecce Signum** - 📧 TO:**${person.random()}**, **priminimas**: Ventiliacijos šachtoje #${rNum(100, 999)} rastas Jūsų batas, įtariamas katinas arba ${person.random()}.`,
-    ]
+    ] */
 }
 
 /**
