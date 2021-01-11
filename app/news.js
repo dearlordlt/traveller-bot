@@ -115,9 +115,9 @@ const news = () => {
         `📰 **ENTERTAINMENT NOW** - ${names.getName()} ir jo muzika nuo šiol draudžiami ir ${where.random()}. *Skaityti daugiau...*`,
         `📰 **ENTERTAINMENT NOW** - ${names.getName()} ir ${names.getName()} kartu su grupe 'Lotynų Rokas' koncertuos ${where.random()}. *Skaityti daugiau...*`,
         `📰 **ENTERTAINMENT NOW** - ${names.getName()} atsisveikinimo turas 'Žvaigždžių Raketos' ${where.random()} ir ${where.random()} jau kitą mėnesį. *Skaityti daugiau...*`,
-        `📰 **DEIMOS TODAY** - Virgo sistemoje, po ginkluoto pasipriešinimo, Deimo spec. pajėgos sulaikė du imperijos šnipus: Krato Enėją ir Tuliju Septą. Likę šnipai sunaikinti kovos metu. Abu nuteisti karo tribunolo ir sušaudyti vietoje. *Skaityti daugiau...*`,
-        `📰 **DEIMOS TODAY** - Virgo sistemoje, po ginkluoto pasipriešinimo, Deimo spec. pajėgos sulaikė du imperijos šnipus: Krato Enėją ir Tuliju Septą. Likę šnipai pabėgo. Abu nuteisti karo tribunolo ir sušaudyti vietoje. *Skaityti daugiau...*`,
-        `📰 **DEIMOS TODAY** - Virgo sistemoje, po ginkluoto pasipriešinimo, Deimo spec. pajėgos sulaikė du imperijos šnipus: Krato Enėją ir Tuliju Septą. Likė šnipai slapstosi Virgo sistemoję. Abu nuteisti karo tribunolo ir sušaudyti vietoje. *Skaityti daugiau...*`,
+        `📰 **DEIMOS TODAY** - Virgo sistemoje, po ginkluoto pasipriešinimo, Deimo spec. pajėgos sulaikė du imperijos šnipus: Primus Pilus Krato Enėją ir Centurijoną Tuliju Septą. Likę šnipai sunaikinti kovos metu. Abu nuteisti karo tribunolo ir sušaudyti vietoje. *Skaityti daugiau...*`,
+        `📰 **DEIMOS TODAY** - Virgo sistemoje, po ginkluoto pasipriešinimo, Deimo spec. pajėgos sulaikė du imperijos šnipus: Primus Pilus Krato Enėją ir Centurijoną Tuliju Septą. Likę šnipai pabėgo. Abu nuteisti karo tribunolo ir sušaudyti vietoje. *Skaityti daugiau...*`,
+        `📰 **DEIMOS TODAY** - Virgo sistemoje, po ginkluoto pasipriešinimo, Deimo spec. pajėgos sulaikė du imperijos šnipus: Primus Pilus Krato Enėją ir Centurijoną Tuliju Septą. Likė šnipai slapstosi Virgo sistemoję. Abu nuteisti karo tribunolo ir sušaudyti vietoje. *Skaityti daugiau...*`,
     ]
 };
 
