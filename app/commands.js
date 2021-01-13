@@ -24,7 +24,20 @@ const dmVal = (num) => {
     if (num <= 17) return '+3';
 }
 
-const parseCommand = (msg) => {
+const parseCommand = async (msg, keyv) => {
+
+    if (msg.content.startsWith('$save')) {
+        const content = msg.content.replace(/\s\s+/g, ' ');
+        const arg = content.split(' ')[1];
+        await keyv.set('foo', arg);
+        msg.react('🦮');
+    }
+
+    if (msg.content.startsWith('$load')) {
+        const val = await keyv.get('foo');
+        msg.react('🦮');
+        msg.reply(`${val}`);
+    }
 
     if (msg.content.startsWith('$help')) {
         msg.react('🦮');

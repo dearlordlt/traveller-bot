@@ -1,6 +1,12 @@
 require('dotenv').config();
 
+const Keyv = require('keyv');
 const Discord = require('discord.js');
+
+const mongo_url = process.env.MONGO_DB.toString();
+const keyv = new Keyv(mongo_url);
+keyv.on('error', err => console.error('Keyv connection error:', err));
+
 const client = new Discord.Client({
     partials: ['MESSAGE']
 });
@@ -15,7 +21,7 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-    command.parseCommand(msg);
+    command.parseCommand(msg, keyv);
 });
 
 // eslint-disable-next-line no-undef
