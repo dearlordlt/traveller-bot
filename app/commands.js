@@ -39,13 +39,6 @@ const parseCommand = async (msg, keyv) => {
         msg.reply(`${val}`);
     }
 
-    if (msg.content.startsWith('$decode')) {
-        const content = msg.content.replace(/\s\s+/g, ' ');
-        const arg = content.split(' ')[1];
-        msg.react('🦮');
-        msg.reply(`${arg.toString('base64')}`);
-    }
-
     if (msg.content.startsWith('$help')) {
         msg.react('🦮');
         msg.reply(`
