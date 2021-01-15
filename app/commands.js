@@ -28,22 +28,25 @@ const parseCommand = async (msg, keyv) => {
 
     if (msg.content.startsWith('$save')) {
         const content = msg.content.replace(/\s\s+/g, ' ');
-        const arg = content.split(' ').shift().join(' ');
+        const arg = content.split(' ')[1];
         await keyv.set('foo', arg);
         msg.react('🦮');
+        return;
     }
 
     if (msg.content.startsWith('$load')) {
         const val = await keyv.get('foo');
         msg.react('🦮');
         msg.reply(`${val}`);
+        return;
     }
 
     if (msg.content.startsWith('$s-name ')) {
         const content = msg.content.replace(/\s\s+/g, ' ');
-        const arg = content.split(' ')[1];
+        const arg = content.split(' ').shift().join(' ');
         await keyv.set('ship', arg);
         msg.react('🧰');
+        return;
     }
 
     if (msg.content.startsWith('$s-name')) {
@@ -53,6 +56,7 @@ const parseCommand = async (msg, keyv) => {
         }
         msg.react('🧰');
         msg.reply(`${val}`);
+        return;
     }
 
     if (msg.content.startsWith('$help')) {
