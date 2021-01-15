@@ -39,14 +39,14 @@ const parseCommand = async (msg, keyv) => {
         msg.reply(`${val}`);
     }
 
-    if (msg.content.startsWith('$ship ')) {
+    if (msg.content.startsWith('$ship-name ')) {
         const content = msg.content.replace(/\s\s+/g, ' ');
         const arg = content.split(' ')[1];
         await keyv.set('ship', arg);
         msg.react('🧰');
     }
 
-    if (msg.content.startsWith('$ship')) {
+    if (msg.content.startsWith('$ship-name')) {
         const val = await keyv.get('ship');
         msg.react('🧰');
         msg.reply(`${val}`);
@@ -76,6 +76,7 @@ const parseCommand = async (msg, keyv) => {
         🪐 **$news x y z** - *starts news feed: x:msg at time, y:to keep in chat, z: ms interval, a.e. $news 1 5 5000*
         🪐 **$stop** - *stops news feed*
         🪐 **$is_running** - *shows news feed status*
+        🪐 **$ship-name x** - sets ship Name to x or displays ship name
         `);
         return;
     }
