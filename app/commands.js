@@ -39,6 +39,19 @@ const parseCommand = async (msg, keyv) => {
         msg.reply(`${val}`);
     }
 
+    if (msg.content.startsWith('$ship ')) {
+        const content = msg.content.replace(/\s\s+/g, ' ');
+        const arg = content.split(' ')[1];
+        await keyv.set('ship', arg);
+        msg.react('🧰');
+    }
+
+    if (msg.content.startsWith('$ship')) {
+        const val = await keyv.get('ship');
+        msg.react('🧰');
+        msg.reply(`${val}`);
+    }
+
     if (msg.content.startsWith('$help')) {
         msg.react('🦮');
         msg.reply(`
@@ -418,7 +431,7 @@ const parseCommand = async (msg, keyv) => {
         const ds = msg.content.split(' ')[3] || 1000;
         intervalIndex = 0;
         msg.react('🆗');
-        startFeed(msg, +dm, +dd, +ds);
+        startFeed(msg, +dm, +dd, +ds, keyv);
         return;
     }
 
@@ -468,19 +481,25 @@ Array.prototype.random = function () {
     return this[Math.floor((Math.random() * this.length))];
 }
 
-const startFeed = (msg, dm, dd, ds) => {
+const startFeed = (msg, dm, dd, ds, keyv) => {
     if (newsFeedInterval) clearInterval(newsFeedInterval);
-    newsFeedInterval = setInterval(() => {
+    newsFeedInterval = setInterval(async () => {
         intervalIndex++;
         let newsFeedRnd = ``;
         let ev = r();
 
+        let shipName = await keyv.get('foo');
+
+        if (!shipName) {
+            shipName = 'Unnamed Ship'
+        }
+
         if (ev === 6) {
             newsFeedRnd = newsFeed.getRandomNews();
         } else if (ev === 5) {
-            newsFeedRnd = newsFeed.getPersonalAlert();
+            newsFeedRnd = newsFeed.getPersonalAlert(shipName);
         } else if (ev === 4 || ev === 3) {
-            newsFeedRnd = newsFeed.shipEvents().random();
+            newsFeedRnd = newsFeed.shipEvents(shipName).random();
         } else {
             newsFeedRnd = newsFeed.news().random();
         }

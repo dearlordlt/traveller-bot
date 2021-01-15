@@ -138,19 +138,19 @@ const getAccount = () => {
     return `${part1}-${part2}-${part3}-${part4}-${part5}`;
 }
 
-const whatHappened = () => {
+const whatHappened = (shipName) => {
     return [
-        `FROM: **ISS/ES**: Jūsų kambaryje liko uždarytas katinas, jei nesiimsite veiksmų, katinas sunaikins ${rNum(1, 99)}% Jūsų asmeninių daiktų`,
+        `FROM: **${shipName}**: Jūsų kambaryje liko uždarytas katinas, jei nesiimsite veiksmų, katinas sunaikins ${rNum(1, 99)}% Jūsų asmeninių daiktų`,
         `FROM: **GALDIUS Inc**: Išpardavimas: Pasinaudok 5% nuolaidos kodu #DD-${rNum(0, 999) + 1000}`,
         `FROM: **Deimo Princo Advokatas**: Deimo princas paliko jums palikimą - Cr${rNum(0, 999) * rNum(999, 9999)}, perveskite Cr200 į ${getAccount()} saskaitą kad patvirtinti savo asmenybę!`,
-        `FROM: **ISS/ES** - Jūsų kajutė ${rNum(25, 99)}% sutvarkyta pagal nustatytus reikalavimus, prašome palaikyti 100% tvarką.`,
+        `FROM: **${shipName}** - Jūsų kajutė ${rNum(25, 99)}% sutvarkyta pagal nustatytus reikalavimus, prašome palaikyti 100% tvarką.`,
         `FROM: **Džiugi naujiena**: Mitros paslaptys prieinamos visiems, perveskite Cr200 į ${getAccount()} saskaitą kad sužinoti daugiau`,
         `FROM: **LEGIO CXIX**: Renka naujus legionierius, spauskite **čia** kad sužinoti daugiau.`,
         `FROM: **Kosminiai Bikiniai ( • )( • )**: Negavome prenumeratos mokęsčio už praeitus metus, perveskite Cr200 į ${getAccount()} saskaitą kad atnaujinti prenumeratą.`,
         `FROM: **Septima LXIX**: Nori pamatyti mano nuotaukas ❤️❤️❤️ Spausk **Čia**.`,
         `FROM: **Bacho Bažnyčia**: Didžiausias alkoholio pasirinkimas Aurėjoje 🥂. Spausk **Čia**.`,
         `FROM: **Fortuna Inc**: Lengvas būdas užsidirbti Cr10000/mėn, darbas iš namų vos 2h per dieną, nori sužinoti daugiau? Spausk **Čia**..`,
-        // `FROM: **Ecce Signum Systems**: Primninimas: esant uoste nupirkti ${rNum(1, 5)}Kg miltų,  ${rNum(1, 5)}Kg mėsos,  ${rNum(20, 40)}Vnt. kiaušinių  ${rNum(1, 5)}Kg maisto katinui ir daržovių savo nuožiūra. *<SET REMINDER>*`,
+        `FROM: **${shipName} Systems**: Primninimas: esant uoste nupirkti ${rNum(1, 5)}Kg miltų,  ${rNum(1, 5)}Kg mėsos,  ${rNum(20, 40)}Vnt. kiaušinių  ${rNum(1, 5)}Kg maisto katinui ir daržovių savo nuožiūra. *<SET REMINDER>*`,
         `FROM: **Olympus Imperial Bank**: Pastebėta įtartina transakcija iš Jūsū sąskaitos 'Cr200, Gavėjas - *Deimo Princo Advokatas*'. Jei Jūs neatlikote šio pavedimo, krepkitės į artimiausią mūsų skyrių.`,
         `FROM: **RINKIMAI**: Artėja Olimpo Senato Tribūno rinkimai, nežinai už ką balsuoti? Rinkis 'Olimpo plebsų darbo ir tvarkos sąjungos su teisingumu naujųjų respublikonų-liberalų-demokratų už vieningą tautą liaudies ir žmonių partiją'! Sąrašas #LXIX.`,
         `FROM: **${names.getName()}**: Salvė! 12 metų mokyklos baigimo proga, kviečiame tave į klasiokų susitikimą Eos!`,
@@ -159,40 +159,38 @@ const whatHappened = () => {
     ]
 };
 
-const getPersonalAlert = () => {
-    return `TO: 📧 **${person.random()}** ${whatHappened().random()}`;
+const getPersonalAlert = (shipName) => {
+    return `TO: 📧 **${person.random()}** ${whatHappened(shipName).random()}`;
 }
 
-const shipEvents = () => {
+const shipEvents = (shipName) => {
     return [
         `⚠️ ** Ecce Signum Diagnostics ** - Visos sistemos sugadintos, gyvybės palaikymas atjungtas, 7 neidentifikuoti asmenys artėja prie kapitono tiltelio. Susinaikinimas po 3 ... 2 ... 1 ...`,
         `⚠️ ** Ecce Signum Diagnostics ** - .. neatpažintas objektas (#PHB-5010530315) sunaikino RSS - Tornado, RSS Ciklonas sugadintas. NO nekeičia kurso, gynybos sistemos užrakintos, rekomenduojama evakuacija.`,
         `⚠️ ** Ecce Signum ** - Paskutinė žinutė prieš susinaikinimą: TO:**Ecce Signum įgula**, Salve broliai! Manes laukia paskutinis mūšis. Po savęs palieku savo draugams ir broliams savo paskutinį palikimą - jį rasite {koordinatės}. Jums ten patekti padės mano draugas? Ardanas. Suraskite ji Virgo bazėje. Pasirūpinkite Tara ir Cezariu. Semper Fi ir iki susimatymo Eliziejaus Laukuose!`,
+        `⚠️ **${shipName} Diagnostics** - Atlikta Gyvybės palaikymo sistemų diagnostika, tikimybė isgyventi sekantį skrydį - ${rNum(91, 99)},${rNum(0, 99)}%`,
+        `⚠️ **${shipName} Diagnostics** - Atlikta Gyvybės palaikymo sistemų diagnostika, rekomenduojama nesinaudoti cryo kapsule #${rNum(1, 7)}`,
+        `☢️ **${shipName} Diagnostics** - Diagnostika: įgulos nario #0-F24AA alkoholio atsargos pavojuje (Liko ${rNum(0, 100)} alkoholio vienetų), rekomendacija - pasipildyti atsargas`,
+        `☢️ **${shipName} Diagnostics** - Laivo saugumo diagnostika: abordažo atveju laivo įgula netektų ${rNum(70, 100)}% įgulos narių`,
+        `📵 **${shipName} Diagnostics** - Laivo sensorių diagnostika: neveikia ${rNum(0, 10)} posistemė/s, prašom susisiekti su sensorių inžinieriumi`,
+        `📵 **${shipName} Diagnostics** - Laivo sensorių diagnostika: sensoriai nerasti, priežastis - ant pulto miegantis katinas, prašom susisiekti su sensorių inžinieriumi`,
+        `🧰 **${shipName} Diagnostics** - Atlikta laivo valdymo kalibracija, tikimybė atlikti manevrą padidėjo 0,00${rNum(1, 99)}%`,
+        `🧰 **${shipName} Diagnostics** - Atlikta laivo piloto funkcijų diagnostika, rekomenduojama neatlikinėti sudėtingų manevrų esant dideliam greičiui`,
+        `🧯 **${shipName} Diagnostics** - Krovinių skyriuje rasta parazitų, rekomenduojama laikytis higienos ir pamaitinti katiną`,
+        `🧯 **${shipName} Diagnostics** - Krovinių skyriuje užstrigo katinas, konteineris #**${rNum(10000, 20000)}**. Skubiai kviečiama įgula`,
+        `🧯 **${shipName} Diagnostics** - Krovinių skyriaus diagnostika, rekomenduojama patikrinti konteinerį **#${rNum(10000, 20000)}**. Skubiai kviečiama įgula`,
+        `🔧 **${shipName} Diagnostics** - Atlikta medicinos skyriaus diagnostika, trūkstamos įrangos ir medikamentų kodas: **#AA-${rNum(10000, 99999)}**`,
+        `🔧 **${shipName} Diagnostics** - Atlikta medicinos skyriaus diagnostika, trūksta medicininio alkoholio, įtariamas įgulos narys - #0-F24AA`,
+        `🔧 **${shipName} Diagnostics** - Atlikta medicinos skyriaus diagnostika, rekomenduojama nelaikyti ginklų organų atauginimo kapsulėje`,
+        `🔋 **${shipName} Diagnostics** - Atlikta Reaktoriaus diagnostika: radiacinis fonas pasikeitė ${rNum(0, 1) === 0 ? '-' : '+'}${rNum(0, 2)}.${rNum(0, 10)}%.`,
+        `🔋 **${shipName} Diagnostics** - Atlikta Reaktoriaus diagnostika: tiesioginio pataikymo į reaktorių atveju, tikimybė išgyventi lygi 0.0000${rNum(1, 999)}%`,
+        `🔫 **${shipName} Diagnostics** - Atlikta bokštelių diagnostika: Kairiarankiams rekomenduojama naudoti dešinį bokštelį.`,
+        `🔥 **${shipName}** - 📧 TO:**${person.random()}**, **priminimas**: susitvarkyti betvarkę virtuvėje, nesusitvarkius bus atjungta šilto vandens duše privilegija`,
+        `🔥 **${shipName}** - 📧 TO:**${person.random()}**, **priminimas**: Jūsų siunta nuo *Žurnalas Kosminiai Bikiniai - naujausias numeris* randasi konteineryje #**${rNum(10000, 20000)}**`,
+        `🔥 **${shipName}** - 📧 TO:**${person.random()}**, **priminimas**: Jūsų kambario kodas *kambarys123* nebegalioja, prašome pasikeisti prie artimiausio terminalo.`,
+        `🔥 **${shipName}** - 📧 TO:**${person.random()}**, **priminimas**: Jūsų 'SPAM' aplankas užima ${rNum(20, 60)}% viso laivo turimų laikmenų, prašome skubiai išsitrinti nereikalingas žinutes.`,
+        `🔥 **${shipName}** - 📧 TO:**${person.random()}**, **priminimas**: Ventiliacijos šachtoje #${rNum(100, 999)} rastas Jūsų batas, įtariamas katinas arba ${person.random()}.`,
     ];
-    /* return [
-        `⚠️ **Ecce Signum Diagnostics** - Atlikta Gyvybės palaikymo sistemų diagnostika, tikimybė isgyventi sekantį skrydį - ${rNum(91, 99)},${rNum(0, 99)}%`,
-        `⚠️ **Ecce Signum Diagnostics** - Atlikta Gyvybės palaikymo sistemų diagnostika, rekomenduojama nesinaudoti cryo kapsule #${rNum(1, 7)}`,
-        `☢️ **Ecce Signum Diagnostics** - Diagnostika: įgulos nario #0-F24AA alkoholio atsargos pavojuje (Liko ${rNum(0, 100)} alkoholio vienetų), rekomendacija - pasipildyti atsargas`,
-        `☢️ **Ecce Signum Diagnostics** - Laivo saugumo diagnostika: abordažo atveju laivo įgula netektų ${rNum(70, 100)}% įgulos narių`,
-        `📵 **Ecce Signum Diagnostics** - Laivo sensorių diagnostika: neveikia ${rNum(0, 10)} posistemė/s, prašom susisiekti su sensorių inžinieriumi`,
-        `📵 **Ecce Signum Diagnostics** - Laivo sensorių diagnostika: sensoriai nerasti, priežastis - ant pulto miegantis katinas, prašom susisiekti su sensorių inžinieriumi`,
-        `🧰 **Ecce Signum Diagnostics** - Atlikta laivo valdymo kalibracija, tikimybė atlikti manevrą padidėjo 0,00${rNum(1, 99)}%`,
-        `🧰 **Ecce Signum Diagnostics** - Atlikta laivo piloto funkcijų diagnostika, rekomenduojama neatlikinėti sudėtingų manevrų esant dideliam greičiui`,
-        `🧯 **Ecce Signum Diagnostics** - Krovinių skyriuje rasta parazitų, rekomenduojama laikytis higienos ir pamaitinti katiną`,
-        `🧯 **Ecce Signum Diagnostics** - Krovinių skyriuje užstrigo katinas, konteineris #**${rNum(10000, 20000)}**. Skubiai kviečiama įgula`,
-        `🧯 **Ecce Signum Diagnostics** - Krovinių skyriaus diagnostika, rekomenduojama patikrinti konteinerį **#${rNum(10000, 20000)}**. Skubiai kviečiama įgula`,
-        `🔧 **Ecce Signum Diagnostics** - Atlikta medicinos skyriaus diagnostika, trūkstamos įrangos ir medikamentų kodas: **#AA-${rNum(10000, 99999)}**`,
-        `🔧 **Ecce Signum Diagnostics** - Atlikta medicinos skyriaus diagnostika, trūksta medicininio alkoholio, įtariamas įgulos narys - #0-F24AA`,
-        `🔧 **Ecce Signum Diagnostics** - Atlikta medicinos skyriaus diagnostika, rekomenduojama nelaikyti ginklų organų atauginimo kapsulėje`,
-        `🔋 **Ecce Signum Diagnostics** - Atlikta Reaktoriaus diagnostika: radiacinis fonas pasikeitė ${rNum(0, 1) === 0 ? '-' : '+'}${rNum(0, 2)}.${rNum(0, 10)}%.`,
-        `🔋 **Ecce Signum Diagnostics** - Atlikta Reaktoriaus diagnostika: tiesioginio pataikymo į reaktorių atveju, tikimybė išgyventi lygi 0.0000${rNum(1, 999)}%`,
-        `🔫 **Ecce Signum Diagnostics** - Atlikta bokštelių diagnostika: Kairiarankiams rekomenduojama naudoti dešinį bokštelį.`,
-        `🔥 **Ecce Signum** - 📧 TO:**${person.random()}**, **priminimas**: susitvarkyti betvarkę virtuvėje, nesusitvarkius bus atjungta šilto vandens duše privilegija`,
-        `🔥 **Ecce Signum** - 📧 TO:**${person.random()}**, **priminimas**: Jūsų siunta nuo *Žurnalas Kosminiai Bikiniai - naujausias numeris* randasi konteineryje #**${rNum(10000, 20000)}**`,
-        `🔥 **Ecce Signum** - 📧 TO:**${person.random()}**, **priminimas**: Jūsų kambario kodas *kambarys123* nebegalioja, prašome pasikeisti prie artimiausio terminalo.`,
-        `🔥 **Ecce Signum** - 📧 TO:**${person.random()}**, **priminimas**: Jūsų 'SPAM' aplankas užima ${rNum(20, 60)}% viso laivo turimų laikmenų, prašome skubiai išsitrinti nereikalingas žinutes.`,
-        `🔥 **Ecce Signum** - 📧 TO:**${person.random()}**, **priminimas**: Ventiliacijos šachtoje #${rNum(100, 999)} rastas Jūsų batas, įtariamas katinas arba ${person.random()}.`,
-    ] */
 }
 
 /**
