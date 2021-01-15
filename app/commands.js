@@ -28,7 +28,7 @@ const parseCommand = async (msg, keyv) => {
 
     if (msg.content.startsWith('$save')) {
         const content = msg.content.replace(/\s\s+/g, ' ');
-        const arg = content.split(' ')[1];
+        const arg = content.split(' ').shift().join(' ');
         await keyv.set('foo', arg);
         msg.react('🦮');
     }
