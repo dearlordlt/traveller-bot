@@ -43,8 +43,10 @@ const parseCommand = async (msg, keyv) => {
 
     if (msg.content.startsWith('$s-name ')) {
         const content = msg.content.replace(/\s\s+/g, ' ');
-        const arg = content.split(' ').shift().join(' ');
-        await keyv.set('ship', arg);
+        const argArr = content.split(' ');
+        const argRemoved = argArr.shift();
+        const str = argRemoved.join(' ');
+        await keyv.set('ship', str);
         msg.react('🧰');
         return;
     }
