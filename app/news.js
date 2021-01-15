@@ -124,6 +124,7 @@ const news = () => {
         `📰 **DEIMOS TODAY** - Virgo sistemoje, po ginkluoto pasipriešinimo, Deimo spec. pajėgos sulaikė du imperijos šnipus: Primus Pilus Krato Enėją ir Centurijoną Tuliju Septą. Likė šnipai slapstosi Virgo sistemoję. Abu nuteisti karo tribunolo ir sušaudyti vietoje. *Skaityti daugiau...*`,
         `📰 **ENTERTAINMENT NOW** - grupė ${bandName()} su daina ${bandName()} papuolė į Aurėjos TOP10 *Skaityti daugiau...*`,
         `📰 **ENTERTAINMENT NOW** - grupė ${bandName()} su daina ${bandName()} papuolė į Aurėjos TOP10 *Skaityti daugiau...*`,
+        `📰 **DEIMOS TODAY** - Naujos 'Tornado III' klasės kariniai laivai pradės patruliuoti sektorius kuriuose bus pastebėti pirtai jau neužilgo  *Skaityti daugiau...*`,
     ]
 };
 
@@ -161,7 +162,10 @@ const whatHappened = (shipName) => {
         `FROM: **RINKIMAI**: Artėja Olimpo Senato Tribūno rinkimai, nežinai už ką balsuoti? Rinkis 'Olimpo plebsų darbo ir tvarkos sąjungos su teisingumu naujųjų respublikonų-liberalų-demokratų už vieningą tautą liaudies ir žmonių partiją'! Sąrašas #LXIX.`,
         `FROM: **${names.getName()}**: Salvė! 12 metų mokyklos baigimo proga, kviečiame tave į klasiokų susitikimą Eos!`,
         `FROM: **${names.getName()}**: Bacho Socialinių Mokslų Institutas atlieka vartotojų įpročių apklausą, pasirinkite vieną: 1) Aš niekada neskaitau laiškų nuo nepažįstamų žmonių, 2) Aš perskaitau visus laiškus iki galo.`,
-        `FROM: **Prefektas: ${names.getName()}** Jūs gavote baudą už greičio viršyjimą ${where.random()}, bauda Cr${rNum(1, 9)}00, susimokėkite arčiausiame uoste.`
+        `FROM: **Prefektas: ${names.getName()}** Jūs gavote baudą už greičio viršyjimą ${where.random()}, bauda Cr${rNum(1, 9)}00, susimokėkite arčiausiame uoste.`,
+        `FROM: **${shipName}** - Jūsų sunaudojamos laivo maisto ir vandens atsargos siekia ${rNum(20, 30)}%, siūloma kreptis į laivo mediką.`,
+        `FROM: **n00bkiller69** - Noob!!!`,
+        `FROM: **UNKNOWN** - Maistas ...`,
     ]
 };
 
