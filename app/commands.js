@@ -492,7 +492,7 @@ const startFeed = (msg, dm, dd, ds, keyv) => {
         let newsFeedRnd = ``;
         let ev = r();
 
-        let shipName = await keyv.get('foo');
+        let shipName = await keyv.get('ship');
 
         if (!shipName) {
             shipName = 'Unnamed Ship'
