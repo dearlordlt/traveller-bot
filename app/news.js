@@ -6,6 +6,40 @@ const rNum = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+const bandName = () => {
+    const first = [
+        'Kosmoso',
+        'Vilties',
+        'Ugniniai',
+        'Tylos',
+        'Žvaigždės',
+        'Blasterio',
+        'Smagus',
+        'Purpuro',
+        'Kietas',
+        'Pykčio',
+        'Pirmas',
+        'Riaušių',
+        'Tikras'
+    ];
+
+    const last = [
+        'Omletas',
+        'Laivynas',
+        'Legijonas',
+        'Įniršis',
+        'Metalas',
+        'Lazeris',
+        'Sprogmuo',
+        'Valdovas',
+        'Miražas',
+        'Imperatorius',
+        'Ribojimas'
+    ];
+
+    return `${first.random()} ${last.random()}`
+}
+
 const network = [
     `📰 **GALAXY NEWS** 🔀`,
     `📰 **ONN** 🔀`,
@@ -201,40 +235,6 @@ const shipEvents = (shipName) => {
         `🔥 **${shipName}** - 📧 TO:**${person.random()}**, **priminimas**: Jūsų 'SPAM' aplankas užima ${rNum(20, 60)}% viso laivo turimų laikmenų, prašome skubiai išsitrinti nereikalingas žinutes.`,
         `🔥 **${shipName}** - 📧 TO:**${person.random()}**, **priminimas**: Ventiliacijos šachtoje #${rNum(100, 999)} rastas Jūsų batas, įtariamas katinas arba ${person.random()}.`,
     ];
-}
-
-const bandName = () => {
-    const first = [
-        'Kosmoso',
-        'Vilties',
-        'Ugniniai',
-        'Tylos',
-        'Žvaigždės',
-        'Blasterio',
-        'Smagus',
-        'Purpuro',
-        'Kietas',
-        'Pykčio',
-        'Pirmas',
-        'Riaušių',
-        'Tikras'
-    ];
-
-    const last = [
-        'Omletas',
-        'Laivynas',
-        'Legijonas',
-        'Įniršis',
-        'Metalas',
-        'Lazeris',
-        'Sprogmuo',
-        'Valdovas',
-        'Miražas',
-        'Imperatorius',
-        'Ribojimas'
-    ];
-
-    return `${first.random()} ${last.random()}`
 }
 
 /**
