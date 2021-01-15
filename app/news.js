@@ -47,6 +47,7 @@ const what = () => {
         `nuo šiol draudžiama vadinti naujagimius vardais prasidedančiais 'D' raide`,
         `šaudmenų kainos ${rNum(1, 2) === 1 ? 'kilo' : 'krito'} ${rNum(1, 20)},${rNum(0, 100)}%`,
         `elektronikos prekių kainos ${rNum(1, 2) === 1 ? 'kilo' : 'krito'} ${rNum(1, 20)},${rNum(0, 100)}%`,
+        `atšauktas grupės ${bandName()} turas`,
     ]
 };
 
@@ -63,6 +64,7 @@ const why = [
     `dėl piratų antpuolių`,
     `dėl nutraukto serialo 'Legijonierių žmonos' XIX sezono`,
     `dėl Deimo Princo mirties`,
+    `dėl ${bandName()} koncerto`,
 ];
 
 const getRandomNews = () => {
@@ -112,12 +114,16 @@ const news = () => {
         `📰 **OLYMPUS SCIENCE DAILY** - Žmonių neigiančių kitų planetų egzistavimą skaičius siekia ${rNum(10, 20)}%, pasitikrink ar nesi vienas iš jų. *Skaityti daugiau...*`,
         `📰 **OLYMPUS SCIENCE DAILY** - dr. ${names.getName()} atrado naują egzoplanetą Andromedos galaktikoje, planeta pavadinta 'Ostas II'. *Skaityti daugiau...*`,
         `📰 **OLYMPUS SCIENCE DAILY** - dr. ${names.getName()} paskaičiavo, kad paskutinis įmanomas neužimtas elektroninio pašto adresas bus užimtas prieš baigiant rašyti šitą straipsnį. *Skaityti daugiau...*`,
-        `📰 **ENTERTAINMENT NOW** - ${names.getName()} ir jo muzika nuo šiol draudžiami ir ${where.random()}. *Skaityti daugiau...*`,
-        `📰 **ENTERTAINMENT NOW** - ${names.getName()} ir ${names.getName()} kartu su grupe 'Lotynų Rokas' koncertuos ${where.random()}. *Skaityti daugiau...*`,
+        `📰 **OLYMPUS SCIENCE DAILY** - dr. ${names.getName()} paskaičiavo, kad žmonės kurių vardas prasideda D raide rečiau yra sėkmingi su kauliukų metimais *Skaityti daugiau...*`,
+        `📰 **OLYMPUS SCIENCE DAILY** - dr. ${names.getName()} nustatė, kad populiariausias kosminių laivų pavadinimas yra 'Unnamed Ship' *Skaityti daugiau...*`,
+        `📰 **ENTERTAINMENT NOW** - grupės ${bandName()} vokalistas - ${names.getName()} ir jo muzika nuo šiol draudžiami ir ${where.random()}. *Skaityti daugiau...*`,
+        `📰 **ENTERTAINMENT NOW** - ${names.getName()} ir ${names.getName()} kartu su grupe ${bandName()} koncertuos ${where.random()}. *Skaityti daugiau...*`,
         `📰 **ENTERTAINMENT NOW** - ${names.getName()} atsisveikinimo turas 'Žvaigždžių Raketos' ${where.random()} ir ${where.random()} jau kitą mėnesį. *Skaityti daugiau...*`,
         `📰 **DEIMOS TODAY** - Virgo sistemoje, po ginkluoto pasipriešinimo, Deimo spec. pajėgos sulaikė du imperijos šnipus: Primus Pilus Krato Enėją ir Centurijoną Tuliju Septą. Likę šnipai sunaikinti kovos metu. Abu nuteisti karo tribunolo ir sušaudyti vietoje. *Skaityti daugiau...*`,
         `📰 **DEIMOS TODAY** - Virgo sistemoje, po ginkluoto pasipriešinimo, Deimo spec. pajėgos sulaikė du imperijos šnipus: Primus Pilus Krato Enėją ir Centurijoną Tuliju Septą. Likę šnipai pabėgo. Abu nuteisti karo tribunolo ir sušaudyti vietoje. *Skaityti daugiau...*`,
         `📰 **DEIMOS TODAY** - Virgo sistemoje, po ginkluoto pasipriešinimo, Deimo spec. pajėgos sulaikė du imperijos šnipus: Primus Pilus Krato Enėją ir Centurijoną Tuliju Septą. Likė šnipai slapstosi Virgo sistemoję. Abu nuteisti karo tribunolo ir sušaudyti vietoje. *Skaityti daugiau...*`,
+        `📰 **ENTERTAINMENT NOW** - grupė ${bandName()} su daina ${bandName()} papuolė į Aurėjos TOP10 *Skaityti daugiau...*`,
+        `📰 **ENTERTAINMENT NOW** - grupė ${bandName()} su daina ${bandName()} papuolė į Aurėjos TOP10 *Skaityti daugiau...*`,
     ]
 };
 
@@ -191,6 +197,40 @@ const shipEvents = (shipName) => {
         `🔥 **${shipName}** - 📧 TO:**${person.random()}**, **priminimas**: Jūsų 'SPAM' aplankas užima ${rNum(20, 60)}% viso laivo turimų laikmenų, prašome skubiai išsitrinti nereikalingas žinutes.`,
         `🔥 **${shipName}** - 📧 TO:**${person.random()}**, **priminimas**: Ventiliacijos šachtoje #${rNum(100, 999)} rastas Jūsų batas, įtariamas katinas arba ${person.random()}.`,
     ];
+}
+
+const bandName = () => {
+    const first = [
+        'Kosmoso',
+        'Vilties',
+        'Ugniniai',
+        'Tylos',
+        'Žvaigždės',
+        'Blasterio',
+        'Smagus',
+        'Purpuro',
+        'Kietas',
+        'Pykčio',
+        'Pirmas',
+        'Riaušių',
+        'Tikras'
+    ];
+
+    const last = [
+        'Omletas',
+        'Laivynas',
+        'Legijonas',
+        'Įniršis',
+        'Metalas',
+        'Lazeris',
+        'Sprogmuo',
+        'Valdovas',
+        'Miražas',
+        'Imperatorius',
+        'Ribojimas'
+    ];
+
+    return `${first.random()} ${last.random()}`
 }
 
 /**
