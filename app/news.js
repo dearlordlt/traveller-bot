@@ -159,6 +159,7 @@ const news = () => {
         `📰 **DEIMOS TODAY** - Virgo sistemoje, po ginkluoto pasipriešinimo, Deimo spec. pajėgos sulaikė du imperijos šnipus: Primus Pilus Krato Enėją ir Centurijoną Tuliju Septą. Likė šnipai slapstosi Virgo sistemoję. Abu nuteisti karo tribunolo ir sušaudyti vietoje. *Skaityti daugiau...*`,
         `📰 **ENTERTAINMENT NOW** - grupė ${bandName()} su daina ${bandName()} papuolė į Aurėjos TOP10 *Skaityti daugiau...*`,
         `📰 **ENTERTAINMENT NOW** - grupė ${bandName()} su daina ${bandName()} papuolė į Aurėjos TOP10 *Skaityti daugiau...*`,
+        `📰 **ENTERTAINMENT NOW** - grupė ${bandName()} su daina ${bandName()} Aurėjos TOP100 pakilo į ${rNum(1, 25)} vietą *Skaityti daugiau...*`,
         `📰 **DEIMOS TODAY** - Naujos 'Tornado III' klasės kariniai laivai pradės patruliuoti sektorius kuriuose bus pastebėti pirtai jau neužilgo  *Skaityti daugiau...*`,
         `📰 **GALAKTIKOS FAKTAI** - Kriaušių sidras neegzistuoja  *Skaityti daugiau...*`,
         `📰 **GALAKTIKOS FAKTAI** - Skrydžio metu netenkama 30% skonio receptorių  *Skaityti daugiau...*`,
@@ -166,7 +167,7 @@ const news = () => {
         `📰 **GALAKTIKOS FAKTAI** - Senovės Egipte, faraonas Pepe II savo vergams liepė išsitepti medumi, kad jo nepultu vabzdžiai  *Skaityti daugiau...*`,
         `📰 **GALAKTIKOS FAKTAI** - Piktų vergai perkelti iš Kaledonijos į Protėją IV tiki kad Loch Neso pabaisa persikelė kartu su jais.  *Skaityti daugiau...*`,
         `📰 **GALAKTIKOS FAKTAI** - Comic Sans šriftas pirmą kartą panaudotas komiksuose.  *Skaityti daugiau...*`,
-        `📰 **GALAKTIKOS FAKTAI** - Olimpo Imperatoriškasis Institutas jau daugiau nei 500 metų negali atsakyti kodėl egzodo metu buvo pasirinkta į Aurėja atvėžti uodus ir erkes.  *Skaityti daugiau...*`,
+        `📰 **GALAKTIKOS FAKTAI** - Olimpo Imperatoriškasis Institutas jau daugiau nei 500 metų negali atsakyti kodėl egzodo metu buvo pasirinkta į Aurėją atvėžti uodus ir erkes.  *Skaityti daugiau...*`,
         `📰 **GALAKTIKOS FAKTAI** - Gaisrinio hidranto patentas buvo prarastas gaisro metu  *Skaityti daugiau...*`,
         `📰 **GALAKTIKOS FAKTAI** - Dauguma nusikaltimų ir "bugų" padaroma pirmadieniais  *Skaityti daugiau...*`,
     ]
@@ -221,8 +222,8 @@ const shipEvents = (shipName) => {
     return [
         /* `⚠️ ** Ecce Signum Diagnostics ** - Visos sistemos sugadintos, gyvybės palaikymas atjungtas, 7 neidentifikuoti asmenys artėja prie kapitono tiltelio. Susinaikinimas po 3 ... 2 ... 1 ...`,
         `⚠️ ** Ecce Signum Diagnostics ** - .. neatpažintas objektas (#PHB-5010530315) sunaikino RSS - Tornado, RSS Ciklonas sugadintas. NO nekeičia kurso, gynybos sistemos užrakintos, rekomenduojama evakuacija.`,
-        `⚠️ ** Ecce Signum ** - Paskutinė žinutė prieš susinaikinimą: TO:**Ecce Signum įgula**, Salve broliai! Manes laukia paskutinis mūšis. Po savęs palieku savo draugams ir broliams savo paskutinį palikimą - jį rasite {koordinatės}. Jums ten patekti padės mano draugas? Ardanas. Suraskite ji Virgo bazėje. Pasirūpinkite Tara ir Cezariu. Semper Fi ir iki susimatymo Eliziejaus Laukuose!`,
-        `⚠️ **${shipName} Diagnostics** - Atlikta Gyvybės palaikymo sistemų diagnostika, tikimybė isgyventi sekantį skrydį - ${rNum(91, 99)},${rNum(0, 99)}%`, */
+        `⚠️ ** Ecce Signum ** - Paskutinė žinutė prieš susinaikinimą: TO:**Ecce Signum įgula**, Salve broliai! Manes laukia paskutinis mūšis. Po savęs palieku savo draugams ir broliams savo paskutinį palikimą - jį rasite {koordinatės}. Jums ten patekti padės mano draugas? Ardanas. Suraskite ji Virgo bazėje. Pasirūpinkite Tara ir Cezariu. Semper Fi ir iki susimatymo Eliziejaus Laukuose!`, */
+        `⚠️ **${shipName} Diagnostics** - Atlikta Gyvybės palaikymo sistemų diagnostika, tikimybė isgyventi sekantį skrydį - ${rNum(91, 99)},${rNum(0, 99)}%`,
         `⚠️ **${shipName} Diagnostics** - Atlikta Gyvybės palaikymo sistemų diagnostika, rekomenduojama nesinaudoti cryo kapsule #${rNum(1, 7)}`,
         `☢️ **${shipName} Diagnostics** - Diagnostika: įgulos nario #0-F24AA alkoholio atsargos pavojuje (Liko ${rNum(0, 100)} alkoholio vienetų), rekomendacija - pasipildyti atsargas`,
         `☢️ **${shipName} Diagnostics** - Laivo saugumo diagnostika: abordažo atveju laivo įgula netektų ${rNum(70, 100)}% įgulos narių`,
