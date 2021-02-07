@@ -121,7 +121,7 @@ const news = () => {
         `📰 **UNDERGROUND FM** - Slapti šaltiniai: OLIMPAS ruošiasi karui su HADU. *Skaityti daugiau...*`,
         `📰 **CORPORATE NEWS** - Sekite akcijų kainas biržose tik už 3000Cr/Mėn. *Skaityti daugiau...*`,
         `📰 **UNKNOWN SOURCE** - U8SXa21pbmdhaSBudXN0YXR5dG9zICdCQVrEli0yMScga29vcmRpbmF0xJdzIFswMzU0MzU0NTM0ODk5OjU1NTYzMzQzNTg3OTo6OTg3NzIzMjM3NTc2NV0g. *Skaityti daugiau...*`,
-        `📰 **NOVI HOMINES** - Naujausias 632 metų riaušių kalendorius jau dabar, tik 9,99Cr. *Skaityti daugiau...*`,
+        `📰 **NOVI HOMINES** - Naujausias 633 metų riaušių kalendorius jau dabar, tik 9,99Cr. *Skaityti daugiau...*`,
         `📰 **ONN** - Imperatoriaus įsakymas: visi veteranai palikę tarnybą per pastaruosius 10 metų netenka pensijos. *Skaityti daugiau...*`,
         `📰 **OLYMPUS FREE MEDIA** - Atskleista Ponto Magistrato korupcijos schema - Senatas tyli. *Skaityti daugiau...*`,
         `📰 **OLYMPUS FREE MEDIA** - Imperatorius atstatydino laivyno Legatą - ${names.getName()}, Egzekucija tiesiogiai per OFM. *Skaityti daugiau...*`,
@@ -133,6 +133,7 @@ const news = () => {
         `📰 **ONN** - Imperatoriaus įsakymas: gladiatorių kautynės bus vykdomos kiekvieną savaitę visose pagrindinėse planetose. Transliacijos nuo šiol nemokamos. Ave Caesar. *Skaityti daugiau...*`,
         `📰 **ONN** - Imperatoriaus įsakymas: nuo šiol draudžiama naujagimius vadinti vardais prasidedančiais 'D' raide, bauda 5000Cr. *Skaityti daugiau...*`,
         `📰 **ONN** - Arkanum sulaikė dar vieną žinomą piratą Olimpo sektoriuje. ${names.getName()} egzekucija tiesiogiai tik per ONN. *Skaityti daugiau...*`,
+        `📰 **ONN** - Labiausiai ieškomas nusikaltėlis visatoje - **Barnabas Ursulus**. *Skaityti daugiau...*`,
         `📰 **TRUTH OF AVALON** - Gražiausių maldų konkursas, balsavimas - 5Cr. *Skaityti daugiau...*`,
         `📰 **JOTUN PATRIOT** - Meninis filmas: 'Šlovė vadui'. Pagr. vaidmenyje - Otto Valerius. *Skaityti daugiau...*`,
         `📰 **VULCAN SUN** - Tiesioginė Senato posedžio transliacija, balsavimas dėl reparacijų Olimpui nutraukimo. *Skaityti daugiau...*`,
@@ -159,6 +160,15 @@ const news = () => {
         `📰 **ENTERTAINMENT NOW** - grupė ${bandName()} su daina ${bandName()} papuolė į Aurėjos TOP10 *Skaityti daugiau...*`,
         `📰 **ENTERTAINMENT NOW** - grupė ${bandName()} su daina ${bandName()} papuolė į Aurėjos TOP10 *Skaityti daugiau...*`,
         `📰 **DEIMOS TODAY** - Naujos 'Tornado III' klasės kariniai laivai pradės patruliuoti sektorius kuriuose bus pastebėti pirtai jau neužilgo  *Skaityti daugiau...*`,
+        `📰 **GALAKTIKOS FAKTAI** - Kriaušių sidras neegzistuoja  *Skaityti daugiau...*`,
+        `📰 **GALAKTIKOS FAKTAI** - Skrydžio metu netenkama 30% skonio receptorių  *Skaityti daugiau...*`,
+        `📰 **GALAKTIKOS FAKTAI** - Egzistuoja tik du žmonės kurie buvo įvertinti nobelio premija daugiau nei vienoje disciplinoje - Marie Curie ir Ostas II *Skaityti daugiau...*`,
+        `📰 **GALAKTIKOS FAKTAI** - Senovės Egipte, faraonas Pepe II savo vergams liepė išsitepti medumi, kad jo nepultu vabzdžiai  *Skaityti daugiau...*`,
+        `📰 **GALAKTIKOS FAKTAI** - Piktų vergai perkelti iš Kaledonijos į Protėją IV tiki kad Loch Neso pabaisa persikelė kartu su jais.  *Skaityti daugiau...*`,
+        `📰 **GALAKTIKOS FAKTAI** - Comic Sans šriftas pirmą kartą panaudotas komiksuose.  *Skaityti daugiau...*`,
+        `📰 **GALAKTIKOS FAKTAI** - Olimpo Imperatoriškasis Institutas jau daugiau nei 500 metų negali atsakyti kodėl egzodo metu buvo pasirinkta į Aurėja atvėžti uodus ir erkes.  *Skaityti daugiau...*`,
+        `📰 **GALAKTIKOS FAKTAI** - Gaisrinio hidranto patentas buvo prarastas gaisro metu  *Skaityti daugiau...*`,
+        `📰 **GALAKTIKOS FAKTAI** - Dauguma nusikaltimų ir "bugų" padaroma pirmadieniais  *Skaityti daugiau...*`,
     ]
 };
 
@@ -209,10 +219,10 @@ const getPersonalAlert = (shipName) => {
 
 const shipEvents = (shipName) => {
     return [
-        `⚠️ ** Ecce Signum Diagnostics ** - Visos sistemos sugadintos, gyvybės palaikymas atjungtas, 7 neidentifikuoti asmenys artėja prie kapitono tiltelio. Susinaikinimas po 3 ... 2 ... 1 ...`,
+        /* `⚠️ ** Ecce Signum Diagnostics ** - Visos sistemos sugadintos, gyvybės palaikymas atjungtas, 7 neidentifikuoti asmenys artėja prie kapitono tiltelio. Susinaikinimas po 3 ... 2 ... 1 ...`,
         `⚠️ ** Ecce Signum Diagnostics ** - .. neatpažintas objektas (#PHB-5010530315) sunaikino RSS - Tornado, RSS Ciklonas sugadintas. NO nekeičia kurso, gynybos sistemos užrakintos, rekomenduojama evakuacija.`,
         `⚠️ ** Ecce Signum ** - Paskutinė žinutė prieš susinaikinimą: TO:**Ecce Signum įgula**, Salve broliai! Manes laukia paskutinis mūšis. Po savęs palieku savo draugams ir broliams savo paskutinį palikimą - jį rasite {koordinatės}. Jums ten patekti padės mano draugas? Ardanas. Suraskite ji Virgo bazėje. Pasirūpinkite Tara ir Cezariu. Semper Fi ir iki susimatymo Eliziejaus Laukuose!`,
-        `⚠️ **${shipName} Diagnostics** - Atlikta Gyvybės palaikymo sistemų diagnostika, tikimybė isgyventi sekantį skrydį - ${rNum(91, 99)},${rNum(0, 99)}%`,
+        `⚠️ **${shipName} Diagnostics** - Atlikta Gyvybės palaikymo sistemų diagnostika, tikimybė isgyventi sekantį skrydį - ${rNum(91, 99)},${rNum(0, 99)}%`, */
         `⚠️ **${shipName} Diagnostics** - Atlikta Gyvybės palaikymo sistemų diagnostika, rekomenduojama nesinaudoti cryo kapsule #${rNum(1, 7)}`,
         `☢️ **${shipName} Diagnostics** - Diagnostika: įgulos nario #0-F24AA alkoholio atsargos pavojuje (Liko ${rNum(0, 100)} alkoholio vienetų), rekomendacija - pasipildyti atsargas`,
         `☢️ **${shipName} Diagnostics** - Laivo saugumo diagnostika: abordažo atveju laivo įgula netektų ${rNum(70, 100)}% įgulos narių`,
