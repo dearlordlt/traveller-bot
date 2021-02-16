@@ -460,6 +460,7 @@ const parseCommand = async (msg, keyv) => {
 
         msg.react(`🎯`);
         msg.reply('```' + spaceTable.toString() + '```');
+        return;
     }
 
     if (msg.content.startsWith('$space_move ')) {
