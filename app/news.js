@@ -10,7 +10,7 @@ const bandName = () => {
     const first = [
         'Kosmoso',
         'Vilties',
-        'Ugniniai',
+        'Ugninis',
         'Tylos',
         'Žvaigždės',
         'Blasterio',
@@ -99,6 +99,7 @@ const why = [
     `dėl nutraukto serialo 'Legijonierių žmonos' XIX sezono`,
     `dėl Deimo Princo mirties`,
     `dėl ${bandName()} koncerto`,
+    `dėl *Sol Tenebris* ir vietinės kariuomenės mūšių`,
 ];
 
 const getRandomNews = () => {
@@ -109,6 +110,7 @@ const news = () => {
     return [
         `📰 **GALAXY NEWS** - Hado mokslininkai sėkmingai išbandė 'Gero Elgesio' implantą ant kalinių, Respublikos Konsulas įtatymu patvirtino leidimą naudoti implantą ant piliečių. *Skaityti daugiau...*`,
         `📰 **GALAXY NEWS** - Hado sistemoje atlikti naujo Laivyno Flagmano Enėjas bandymai. Legatai tvirtina, kad naujas flagmanas atstos Aurėjos laivą. *Skaityti daugiau...*`,
+        `📰 **GALAXY NEWS** - Vykstant Deimo ir Kadmo bendriems veiksmams prieš piratus - Sol Tenebris neteko antro flagmano per šoips metus *Skaityti Daugiau*`,
         `📰 **ONN** - Numalšintas Phano vergų sukilimas pareikalavo tūkstančių legijonierių gyvybių - aukų pagerbimas tiesiogiai per ONN. *Skaityti daugiau...*`,
         `📰 **DEIMOS TODAY** - Trys būdai išsirinkti paklusnų vergą. *Skaityti daugiau...*`,
         `📰 **VULCAN SUN** - Kipro Magistratas ${names.getName()} suimtas dėl iššvaistytų lėšų karo su Olimpu metu, laikinas gubernatorius Olivijus Sula suteikė malonę savo tėvui. *Skaityti daugiau...*`,
@@ -203,7 +205,7 @@ const whatHappened = (shipName) => {
         `FROM: **Bacho Bažnyčia**: Didžiausias alkoholio pasirinkimas Aurėjoje 🥂. Spausk **Čia**.`,
         `FROM: **Fortuna Inc**: Lengvas būdas užsidirbti Cr10000/mėn, darbas iš namų vos 2h per dieną, nori sužinoti daugiau? Spausk **Čia**..`,
         `FROM: **${shipName} Systems**: Primninimas: esant uoste nupirkti ${rNum(1, 5)}Kg miltų,  ${rNum(1, 5)}Kg mėsos,  ${rNum(20, 40)}Vnt. kiaušinių  ${rNum(1, 5)}Kg maisto katinui ir daržovių savo nuožiūra. *<SET REMINDER>*`,
-        `FROM: **Olympus Imperial Bank**: Pastebėta įtartina transakcija iš Jūsū sąskaitos 'Cr200, Gavėjas - *Deimo Princo Advokatas*'. Jei Jūs neatlikote šio pavedimo, krepkitės į artimiausią mūsų skyrių.`,
+        `FROM: **Olympus Imperial Bank**: Pastebėta įtartina transakcija iš Jūsų sąskaitos 'Cr200, Gavėjas - *Deimo Princo Advokatas*'. Jei Jūs neatlikote šio pavedimo, krepkitės į artimiausią mūsų skyrių.`,
         `FROM: **RINKIMAI**: Artėja Olimpo Senato Tribūno rinkimai, nežinai už ką balsuoti? Rinkis 'Olimpo plebsų darbo ir tvarkos sąjungos su teisingumu naujųjų respublikonų-liberalų-demokratų už vieningą tautą liaudies ir žmonių partiją'! Sąrašas #LXIX.`,
         `FROM: **${names.getName()}**: Salvė! 12 metų mokyklos baigimo proga, kviečiame tave į klasiokų susitikimą Eos!`,
         `FROM: **${names.getName()}**: Bacho Socialinių Mokslų Institutas atlieka vartotojų įpročių apklausą, pasirinkite vieną: 1) Aš niekada neskaitau laiškų nuo nepažįstamų žmonių, 2) Aš perskaitau visus laiškus iki galo.`,
@@ -211,6 +213,10 @@ const whatHappened = (shipName) => {
         `FROM: **${shipName}** - Jūsų sunaudojamos laivo maisto ir vandens atsargos siekia ${rNum(20, 30)}%, siūloma kreptis į laivo mediką.`,
         `FROM: **n00bkiller69** - Noob!!!`,
         `FROM: **UNKNOWN** - Maistas ...`,
+        `FROM: **${shipName}** - Jūsų \\Pr0n\\ aplankas užima ${rNum(10, 99)}% laivo kompiuterio atminties, turite ${rNum(12, 24)}h pasidaryti kopijai asmeninėje talpoje.`,
+        `FROM: **Passivission Snowstorm Inc.** - Jūsų 'Planet of Lazercraft' prenumerata baigsis po ${rNum(1, 7)} dienų, prašome pratęsti arba visi Jūsų itemai bus persiųsti vartotojui - *n00bkiller69*`,
+        `FROM: **Bacho Bažnyčia** - Lojaliausiam klientui - nuolaidos iki ${rNum(33, 66)}% 🥂. Spausk **Čia**.`,
+        `FROM: **bene-documentis** - Reikalingi suklastoti dokumentai čia ir dabar? Diskretumas mūsų moto ir kredo! Geriausios kainos tik: @bene-documentis! Pekant dokumentus tam pačiam asmeniui ar laivui - 10% nuolaida`,
     ]
 };
 
