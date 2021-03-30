@@ -136,6 +136,7 @@ const news = () => {
         `📰 **ONN** - Imperatoriaus įsakymas: nuo šiol draudžiama naujagimius vadinti vardais prasidedančiais 'D' raide, bauda 5000Cr. *Skaityti daugiau...*`,
         `📰 **ONN** - Arkanum sulaikė dar vieną žinomą piratą Olimpo sektoriuje. ${names.getName()} egzekucija tiesiogiai tik per ONN. *Skaityti daugiau...*`,
         `📰 **ONN** - Labiausiai ieškomas nusikaltėlis visatoje - **Barnabas Ursulus**. *Skaityti daugiau...*`,
+        `📰 **ONN** - Paskutinės naujienos iš Flavijų rezidencijos Olimpe - žuvusių skaičius perkopė 70 įskaitant Flavijų šeimos galvą. *Skaityti daugiau...*`,
         `📰 **TRUTH OF AVALON** - Gražiausių maldų konkursas, balsavimas - 5Cr. *Skaityti daugiau...*`,
         `📰 **JOTUN PATRIOT** - Meninis filmas: 'Šlovė vadui'. Pagr. vaidmenyje - Otto Valerius. *Skaityti daugiau...*`,
         `📰 **VULCAN SUN** - Tiesioginė Senato posedžio transliacija, balsavimas dėl reparacijų Olimpui nutraukimo. *Skaityti daugiau...*`,
