@@ -123,7 +123,7 @@ const news = () => {
         `📰 **UNDERGROUND FM** - Slapti šaltiniai: OLIMPAS ruošiasi karui su HADU. *Skaityti daugiau...*`,
         `📰 **CORPORATE NEWS** - Sekite akcijų kainas biržose tik už 3000Cr/Mėn. *Skaityti daugiau...*`,
         `📰 **UNKNOWN SOURCE** - U8SXa21pbmdhaSBudXN0YXR5dG9zICdCQVrEli0yMScga29vcmRpbmF0xJdzIFswMzU0MzU0NTM0ODk5OjU1NTYzMzQzNTg3OTo6OTg3NzIzMjM3NTc2NV0g. *Skaityti daugiau...*`,
-        `📰 **NOVI HOMINES** - Naujausias 633 metų riaušių kalendorius jau dabar, tik 9,99Cr. *Skaityti daugiau...*`,
+        `📰 **NOVI HOMINES** - Naujausias 634 metų riaušių kalendorius jau dabar, tik 9,99Cr. *Skaityti daugiau...*`,
         `📰 **ONN** - Imperatoriaus įsakymas: visi veteranai palikę tarnybą per pastaruosius 10 metų netenka pensijos. *Skaityti daugiau...*`,
         `📰 **OLYMPUS FREE MEDIA** - Atskleista Ponto Magistrato korupcijos schema - Senatas tyli. *Skaityti daugiau...*`,
         `📰 **OLYMPUS FREE MEDIA** - Imperatorius atstatydino laivyno Legatą - ${names.getName()}, Egzekucija tiesiogiai per OFM. *Skaityti daugiau...*`,
